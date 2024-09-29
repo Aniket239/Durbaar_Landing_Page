@@ -15,22 +15,29 @@ html {
     font-style: normal;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
-    
+
 }
+
 /* button css start */
-.durbaar_word{
+.durbaar_word {
     font-size: 16px;
     font-weight: bold;
 }
-.extra_font{
-    font-family: "Montserrat", sans-serif;
-    font-size: 21px;
-    font-weight: bold;
+
+.heading {
+    font-family: "Cinzel", serif;
+    font-size: 32px;
+    font-weight: bolder;
+    color: #31403F;
 }
+
 .button-75 {
     align-items: center;
     background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
@@ -41,7 +48,7 @@ html {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    font-family: "Codec cold",sans-serif;
+    font-family: "Codec cold", sans-serif;
     font-size: 16px;
     font-weight: 700;
     height: 54px;
@@ -56,27 +63,27 @@ html {
     -webkit-user-select: none;
     touch-action: manipulation;
     margin-top: 30px;
-  }
-  
-  .button-75:active {
+}
+
+.button-75:active {
     outline: 0;
-  }
-  
-  .button-75:hover {
+}
+
+.button-75:hover {
     outline: 0;
-  }
-  
-  .button-75 span {
+}
+
+.button-75 span {
     transition: all 200ms;
-  }
-  
-  .button-75:hover span {
+}
+
+.button-75:hover span {
     transform: scale(.9);
     opacity: .75;
-  }
-  
-  /* CSS */
-  .button-12 {
+}
+
+/* CSS */
+.button-12 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,39 +95,40 @@ html {
     background-color: transparent;
     margin-top: 90px;
     cursor: pointer;
-  }
+}
 
-  .menu_tag{
+.menu_tag {
     color: white;
     text-decoration: none;
 }
 
-.menu_tag.scrolled{
+.menu_tag.scrolled {
     color: black;
 }
 
-.bottom_nav{
-    display: none;
-}
-.bottom_nav_button-75{
+.bottom_nav {
     display: none;
 }
 
-.side_enquiry_button{
+.bottom_nav_button-75 {
     display: none;
 }
 
-form p{
+.side_enquiry_button {
+    display: none;
+}
+
+form p {
     display: none;
     color: red;
     margin-top: 5px;
 }
-  
+
 /* Hide the arrows in input of type number */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
@@ -137,6 +145,7 @@ input[type=number]::-ms-clear {
 input[type=number]::-ms-reveal {
     display: none;
 }
+
 /* .button-12:focus {
     box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
     outline: 0;
@@ -144,41 +153,44 @@ input[type=number]::-ms-reveal {
 /* ====================================================== desktop styles ====================================*/
 
 
-.banner{
+.banner {
     height: 100vh;
     width: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: black;
 }
-.logo_image{
+
+.logo_image {
     height: 70px;
     width: 70px;
     margin-left: 7%;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
-.headline{
-    padding-top:35vh;
+.headline {
+    padding-top: 35vh;
     text-align: left;
     margin-left: 8%;
     color: white;
     font-optical-sizing: auto;
     font-size: 20px;
-    text-shadow: 
-        -1px -1px 0 #000,  
+    text-shadow:
+        -1px -1px 0 #000,
         1px -1px 0 #000,
-        -1px  1px 0 #000,
-        1px  1px 0 #000;
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
     font-family: "Playwrite AU SA", cursive;
     font-optical-sizing: auto;
 }
-.enquire_button{
+
+.enquire_button {
     margin-top: 2%;
     margin-left: 8%;
     display: flex;
@@ -186,30 +198,30 @@ input[type=number]::-ms-reveal {
     justify-content: flex-start;
 }
 
-.why_choose{
+.why_choose {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 5%;
-    
-}
-.why_choose_text{
-    width: 50%;
-    margin-left: 10%;
-    margin-top: 2%;
-}
-.facilities{
-    width: 80vw;
+
 }
 
-.facilities ul{
+.why_choose_text {
+    margin-top: 2%;
+}
+
+.facilities {
+    padding-left: 6%;
+}
+
+.facilities ul {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
     align-items: center;
 }
 
-.checkbox{
+.checkbox {
     background: url(./assets/checkbox.gif);
     height: 27px;
     width: 27px;
@@ -217,42 +229,96 @@ input[type=number]::-ms-reveal {
     margin-right: 5px;
 }
 
-.facilities ul p{
+.facilities ul p {
     margin: 0;
+    padding: 0 2% 0 0;
+    text-align: left;
+    width: 90%;
 }
 
-.why_choose_text p{
+.why_choose_text p {
     margin-top: 2%;
-    line-height: 25px;
-    width: 82vw;
     margin-bottom: 5%;
+    font-size: 24px;
+    color: #31403F;
+    font-family: "Barlow", sans-serif;
+    line-height: 35px;
+    padding: 0 5%;
+    text-align: center;
 }
-#gallary{
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 5%;
 }
-#gallary h2{
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+    text-align: center;
+}
+
+.service-card h2 {
+    font-family: "Caudex", serif;
+    color: #31403F;
+    font-size: 28px;
+}
+
+.service-card img {
+    width: 50%;
+}
+
+.service-card div {
+    padding: 5%;
+}
+
+.service-card div p {
+    font-family: "Barlow", sans-serif;
+    font-size: 22px;
+    line-height: 33px;
+}
+
+#gallary {
+    margin-top: 5%;
+}
+
+#gallary h2 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.video_container{
+
+.video_container {
     margin-top: 50px;
     display: grid;
     place-items: center;
 }
 
-.video{
+.video {
     width: 70%;
 }
 
-.btn_group{
+.btn_group {
     height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     transform: translateY(-50%);
-    }
+}
 
 .submit_btn {
     height: 50px;
@@ -263,7 +329,7 @@ input[type=number]::-ms-reveal {
     border-radius: 15px;
 }
 
-#map{
+#map {
     width: 100%;
     margin-top: 50px;
     display: flex;
@@ -272,7 +338,7 @@ input[type=number]::-ms-reveal {
     align-items: center;
 }
 
-.map{
+.map {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -280,12 +346,12 @@ input[type=number]::-ms-reveal {
     align-items: center;
 }
 
-.map iframe{
+.map iframe {
     width: 90%;
     height: 70vh;
 }
 
-.contact .address{
+.contact .address {
     margin-top: 5%;
     padding-bottom: 80px;
     display: flex;
@@ -297,12 +363,12 @@ input[type=number]::-ms-reveal {
     color: white;
 }
 
-footer{
+footer {
     margin-top: 10vh;
 }
 
 /* =============================desktop with more than 1024 width========================*/
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 1024px) {
     .navbar {
         height: 7%;
         width: 99%;
@@ -313,8 +379,8 @@ footer{
         transition: all 0.3s;
     }
 
-    #menu{
-        a{
+    #menu {
+        a {
             text-decoration: none;
             color: white;
             font-weight: bold;
@@ -325,11 +391,11 @@ footer{
         }
     }
 
-    .button_nav{
+    .button_nav {
         display: none;
     }
 
-    .hamburger{
+    .hamburger {
         display: none;
     }
 
@@ -345,12 +411,12 @@ footer{
         border-radius: 10px 0 0 10px;
         transition: all 0.3s;
     }
-    
-    .side_enquiry_button{
+
+    .side_enquiry_button {
         display: block;
     }
 
-    .side_nav_button-75{
+    .side_nav_button-75 {
         align-items: center;
         background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
         border: 0;
@@ -360,7 +426,7 @@ footer{
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        font-family: "Codec cold",sans-serif;
+        font-family: "Codec cold", sans-serif;
         font-size: 16px;
         font-weight: 700;
         height: 54px;
@@ -377,20 +443,24 @@ footer{
         margin-top: 30px;
         transform: rotate(90deg) translateY(62px) translatex(28px);
     }
-    .menu{
+
+    .menu {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
         padding-right: 5%;
     }
-    .banner{
+
+    .banner {
         background-image: url(./assets/desktop_hero_image_new.webp);
     }
-    .slider{
+
+    .slider {
         position: static;
     }
-    .main_div{
+
+    .main_div {
         width: 60%;
         height: 70vh;
         box-shadow: 0px 0px 1px grey;
@@ -400,42 +470,48 @@ footer{
         overflow: hidden;
         border-radius: 10px;
     }
-    .slide{
+
+    .slide {
         width: 100%;
         height: 100%;
         position: absolute;
         transition: 1s;
     }
-    #contact_us{
+
+    #contact_us {
         /* border: 1px solid red; */
         flex-direction: column;
     }
-    .enquire_button{
+
+    .enquire_button {
         margin-top: 5vh;
     }
-    .phone_icon{
+
+    .phone_icon {
         display: none;
     }
-    .video{
+
+    .video {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-left: 5%;
         margin-right: 5%;
-        
+
     }
-    .video iframe{
+
+    .video iframe {
         width: 99vw;
         height: 70vh;
         border-radius: 10px;
     }
 
 
-    .address a{
+    .address a {
         text-decoration: none;
         color: white;
     }
-    
+
 }
 
 
@@ -443,15 +519,16 @@ footer{
 /* ====================================================== tab styles ====================================*/
 
 @media screen and (max-width: 991px) {
-  .button-75 {
-    font-size: 15px;
-    height: 50px;
-  }
+    .button-75 {
+        font-size: 15px;
+        height: 50px;
+    }
 
-  .button-75 span {
-    line-height: 50px;
-  }
+    .button-75 span {
+        line-height: 50px;
+    }
 }
+
 /* button css end */
 .navbar {
     display: flex;
@@ -466,17 +543,17 @@ footer{
 } */
 
 
-.video_carousel{
+.video_carousel {
     height: 50vh;
     width: 100%;
 }
 
-.testimonial_carousel{
+.testimonial_carousel {
     height: 50vh;
     width: 100%;
 }
 
-.contact{
+.contact {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -486,7 +563,7 @@ footer{
     width: 100%;
 }
 
-footer{
+footer {
     height: 40vh;
 }
 
@@ -494,14 +571,14 @@ footer{
 /* popup form css */
 /* Styles for the popup background */
 .popup {
-    display: none; 
-    position: fixed; 
-    z-index: 2; 
+    display: none;
+    position: fixed;
+    z-index: 2;
     left: 0;
     top: 0;
-    width: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Popup Content */
@@ -516,7 +593,8 @@ footer{
     z-index: 3;
     position: relative;
 }
-form{
+
+form {
     margin-top: 20%;
     padding-bottom: 5%;
     display: flex;
@@ -525,13 +603,14 @@ form{
     flex-direction: column;
 }
 
-form input{
+form input {
     margin: 5px;
     width: 80%;
     padding: 10px;
     border-radius: 5px;
     border: 2px solid black;
 }
+
 /* The Close Button */
 .close {
     color: #aaa;
@@ -546,6 +625,7 @@ form input{
     text-decoration: none;
     cursor: pointer;
 }
+
 .enquire_button {
     text-align: center;
     margin-top: 20px;
@@ -575,10 +655,10 @@ form input{
         transition: all 0.3s;
     }
 
-    .bottom_nav{
+    .bottom_nav {
         display: none;
         position: fixed;
-        bottom:0;
+        bottom: 0;
         background-color: rgb(0, 24, 56);
         width: 90%;
         height: 30px;
@@ -589,7 +669,7 @@ form input{
         transition: all 0.3s;
     }
 
-    .bottom_nav_button-75{
+    .bottom_nav_button-75 {
         align-items: center;
         background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
         border: 0;
@@ -599,7 +679,7 @@ form input{
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        font-family: "Codec cold",sans-serif;
+        font-family: "Codec cold", sans-serif;
         font-size: 16px;
         font-weight: 700;
         height: 54px;
@@ -615,7 +695,7 @@ form input{
         touch-action: manipulation;
     }
 
-    .main_div{
+    .main_div {
         width: 90%;
         height: 223px;
         box-shadow: 0px 0px 1px grey;
@@ -626,7 +706,7 @@ form input{
         overflow: hidden;
         border-radius: 10px;
     }
-    
+
     .menu {
         display: none;
         flex-direction: column;
@@ -643,12 +723,12 @@ form input{
     .menu.open {
         display: flex;
         color: white;
-        background-color: rgb(0, 24, 56);        
+        background-color: rgb(0, 24, 56);
         height: 40vh;
         margin-top: 5%;
     }
 
-    
+
 
     .hamburger {
         margin-right: 3%;
@@ -661,25 +741,32 @@ form input{
     }
 
     .navbar.scrolled .logo_image {
-        filter: none; /* Removes any color filter, make sure your logo image works well with this */
+        filter: none;
+        /* Removes any color filter, make sure your logo image works well with this */
     }
-    
+
     .navbar.scrolled .hamburger {
-        color: black; /* Changes the color of the hamburger icon */
+        color: black;
+        /* Changes the color of the hamburger icon */
     }
-    
+
     /* Ensure the initial color of the hamburger icon is white for the transparent background */
     .hamburger {
         color: white;
     }
 
-    .banner{
+    .banner {
         background-image: url(./assets/banner_new.jpeg);
 
     }
-    .headline{
+
+    .why_choose {
+        flex-direction: column;
+    }
+
+    .headline {
         margin: 0;
-        padding-top:30%;
+        padding-top: 30%;
         text-align: center;
         color: white;
         font-optical-sizing: auto;
@@ -698,48 +785,70 @@ form input{
         background-color: white;
         border-radius: 10px 0 0 10px;
     }
-    
-    .phone_icon img{
+
+    .phone_icon img {
         background-color: white;
         border-radius: 15px;
         padding: 3px;
     }
 
-    .side_enquiry_button{
+    .side_enquiry_button {
         display: none;
     }
 
-    .side_nav_button-75{
+    .side_nav_button-75 {
         display: none;
     }
 
+    .why_choose_text p{
+        font-size: 20px;
+        padding: 0 3%;
+    }
 
-    .facilities ul{
+
+    .facilities ul {
         width: 100%;
         display: flex;
         flex-direction: row;
         margin-bottom: 10px;
         align-items: flex-start;
     }
-    .extra_font {
-        font-family: "Montserrat", sans-serif;
-        font-size: 19px;
-        font-weight: bold;
+
+    .heading {
+        font-size: 28px;
     }
 
-    .checkbox{
+    .checkbox {
         width: 30px;
         background-size: 100%;
         background-repeat: no-repeat;
+        margin-top: 1%;
     }
-    .contact{
+
+    .service-card {
+        flex-direction: column;
+        padding: 5% 0;
+    }
+
+    #services-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .service-card img {
+        width: 100%;
+        height: 30vh;
+    }
+
+
+    .contact {
         display: flex;
         flex-direction: column;
         margin-top: 10vh;
         height: 50vh;
 
     }
-    .contact #map{
+
+    .contact #map {
         width: 100vw;
         height: 50vh;
         margin-top: 72%;
@@ -747,18 +856,22 @@ form input{
         margin-bottom: 20px;
 
     }
-    .map{
+
+    .map {
         height: 40vh;
     }
-    .map h2{
+
+    .map h2 {
         text-align: center;
     }
-    iframe{
+
+    iframe {
         width: 100vw;
         height: 40vh;
-        
+
     }
-    .contact .address{
+
+    .contact .address {
         margin-top: 0%;
         margin-bottom: 10%;
         padding-bottom: 80px;
@@ -770,16 +883,13 @@ form input{
         width: 100%;
         color: white;
     }
-     .extra_font{
-        font-size: 16px;
-    }
 
-    .address a{
+    .address a {
         text-decoration: none;
         color: white;
     }
 
-    .address div{
+    .address div {
         padding: 0 10%;
     }
 
@@ -797,27 +907,32 @@ form input{
 
     form input::placeholder {
         color: rgb(0, 0, 0);
-        font-size: 14px; /* Adjust font size */
+        font-size: 14px;
+        /* Adjust font size */
     }
-    .enquire_button{
+
+    .enquire_button {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 40px 0 0 0;
     }
-    .slider{
+
+    .slider {
         position: static;
     }
 
-    .slide{
+    .slide {
         width: 100%;
         height: 100%;
         position: absolute;
         transition: 1s;
     }
-    .video_container{
+
+    .video_container {
         margin-top: 60px;
         display: block;
     }
+
     /* slider css end */
 }
