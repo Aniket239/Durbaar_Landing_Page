@@ -86,11 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
         var side_enquiry_button = document.getElementById("side_enquiry_button");
         var navbar = document.getElementById("navbar");
         var menuTags = document.querySelectorAll('.menu_tag');
+        var sideIcons = document.getElementById("side_icon");
     
         if (window.scrollY > 150) {
             navbar.style.backgroundColor = 'white';
             navbar.classList.add('scrolled');
             bottom_nav.style.display = 'flex';
+            sideIcons.style.display = 'flex';
             
             // Change menu color to black only on non-mobile view
             if (window.innerWidth >= 768) {
@@ -105,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.style.backgroundColor = 'transparent';
             navbar.classList.remove('scrolled');
+            sideIcons.style.display = 'none';
             
             // Change menu color to white on scroll up
             if (window.innerWidth >= 768) {

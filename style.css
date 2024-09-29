@@ -291,6 +291,74 @@ input[type=number]::-ms-reveal {
     line-height: 33px;
 }
 
+#amenities {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    background-color: #f9f9f9;
+    /* Optional: Change as needed */
+}
+
+.amenities-img {
+    flex: 1 1 50%;
+    padding-right: 20px;
+}
+
+.amenities-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Optional: Rounded corners */
+}
+
+.amenities-container {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.amenities-headings {
+    margin-bottom: 30px;
+    padding: 0 0 0 5%;
+}
+.amenities-headings p {
+    font-size: 1.5em;
+    color: #777;
+    font-family: "Caudex", serif;
+}
+
+.amenity {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 2% 5%;
+}
+
+.amenity img {
+    width: 60px;
+    /* Fixed width for uniformity */
+    height: 60px;
+    /* Fixed height for uniformity */
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.amenity-text h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #333;
+    font-family: "Caudex", serif;
+}
+
+.amenity-text p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.5;
+}
+
+
 #gallary {
     margin-top: 5%;
 }
@@ -329,43 +397,95 @@ input[type=number]::-ms-reveal {
     border-radius: 15px;
 }
 
-#map {
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#map.map-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Light gray background for contrast */
+    text-align: center; /* Center align heading */
 }
 
-.map {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.map iframe {
+#map.map-section .map {
     width: 90%;
-    height: 70vh;
+    height: 650px;
+    margin: 10px auto; /* Center the map */
+    border: 1px solid black;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.contact .address {
-    margin-top: 5%;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgb(0, 24, 56);
+#map.map-section iframe {
     width: 100%;
-    color: white;
+    height: 100%;
+    border: none;
 }
 
-footer {
-    margin-top: 10vh;
+
+footer#contact_us {
+    background-color: #232C3D; /* Dark background for contrast */
+    color: #ffffff;
+    padding: 60px 20px;
 }
+
+footer#contact_us .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Space between sections */
+    justify-content: center; /* Center the sections */
+}
+
+footer#contact_us .footer-section {
+    flex: 1 1 300px; /* Flexible width with a minimum of 300px */
+    display: flex;
+    flex-direction: column;
+}
+
+footer#contact_us .section-heading {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 2px solid #2a7ae2; /* Underline with soft blue */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+footer#contact_us .contact-info .info-item {
+    margin-bottom: 25px;
+}
+
+footer#contact_us .contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2a7ae2; /* Soft blue for subheadings */
+}
+
+footer#contact_us .contact-info p,
+footer#contact_us .contact-info a {
+    font-size: 1rem;
+    color: #dddddd; /* Light gray for text */
+}
+
+footer#contact_us .contact-info a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+/* Social Icons (Uncomment if needed) */
+footer#contact_us .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+footer#contact_us .social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer#contact_us .social-icons a img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
 
 /* =============================desktop with more than 1024 width========================*/
 @media only screen and (min-width: 1024px) {
@@ -775,22 +895,31 @@ form input {
 
 
     .side_icon {
-        display: block;
+        display: none;
+        align-items: center;
+        justify-content: center;
         position: fixed;
-        margin-top: 82%;
-        right: 0px;
+        margin-top: 184%;
+        right: 15px;
         z-index: 10;
-        height: 50px;
-        width: 49px;
-        background-color: white;
-        border-radius: 10px 0 0 10px;
+        height: 55px;
+        width: 55px;
+        background-color: lawngreen;
+        border-radius: 50%;
     }
 
-    .phone_icon img {
-        background-color: white;
-        border-radius: 15px;
-        padding: 3px;
+    .material-symbols-outlined {
+        margin-top: 5px;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 600,
+            'GRAD' 200,
+            'opsz' 48;
+        /* Match this with font-size */
+        color: black;
+        font-size: 34px !important;
     }
+
 
     .side_enquiry_button {
         display: none;
@@ -800,7 +929,7 @@ form input {
         display: none;
     }
 
-    .why_choose_text p{
+    .why_choose_text p {
         font-size: 20px;
         padding: 0 3%;
     }
@@ -839,6 +968,23 @@ form input {
         height: 30vh;
     }
 
+    #amenities {
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .amenities-headings .heading {
+        margin: 20px 0 0 0;
+    }
+
+    .amenities-img {
+        padding: 0;
+        display: none;
+    }
+
+    .amenities-img img {
+        border-radius: 0;
+    }
 
     .contact {
         display: flex;
@@ -851,7 +997,7 @@ form input {
     .contact #map {
         width: 100vw;
         height: 50vh;
-        margin-top: 72%;
+        margin-top: 50%;
         text-align: center;
         margin-bottom: 20px;
 
@@ -935,4 +1081,41 @@ form input {
     }
 
     /* slider css end */
+}
+
+
+@media only screen and (max-width: 380px) {
+    .heading {
+        font-size: 23px;
+    }
+
+    .why_choose_text p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .facilities {
+        padding-left: 3%;
+    }
+
+    .service-card h2 {
+        font-size: 24px;
+    }
+
+    .service-card div p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .amenities-headings p {
+        font-size: 1.2em;
+    }
+    .amenity-text h2 {
+        font-size: 1.4em;
+    }
+    .amenity-text p{
+        font-size: 1.1em;
+    }
+    .contact #map{
+        margin-top: 65%;
+    }
 }
