@@ -1,11 +1,11 @@
-document.getElementsByClassName('close')[0].onclick = function() {
+document.getElementsByClassName('close')[0].onclick = function () {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'none';
     document.body.classList.remove('blurred');
     document.body.style.overflow = 'auto';
 };
 
-document.getElementById('openPopup_bottom_nav').onclick = function() {
+document.getElementById('openPopup_bottom_nav').onclick = function () {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'block';
     document.body.classList.add('blurred');
@@ -13,14 +13,14 @@ document.getElementById('openPopup_bottom_nav').onclick = function() {
 
 };
 
-document.getElementsByClassName('close')[0].onclick = function() {
+document.getElementsByClassName('close')[0].onclick = function () {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'none';
     document.body.classList.remove('blurred');
     document.body.style.overflow = 'auto';
 };
 
-document.getElementById('openPopup_side_nav').onclick = function() {
+document.getElementById('openPopup_side_nav').onclick = function () {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'block';
     document.body.classList.add('blurred');
@@ -28,7 +28,7 @@ document.getElementById('openPopup_side_nav').onclick = function() {
 
 };
 
-document.getElementsByClassName('close')[0].onclick = function() {
+document.getElementsByClassName('close')[0].onclick = function () {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'none';
     document.body.classList.remove('blurred');
@@ -36,7 +36,7 @@ document.getElementsByClassName('close')[0].onclick = function() {
 };
 
 // Close the popup if the user clicks anywhere outside of the popup content
-window.onclick = function(event) {
+window.onclick = function (event) {
     var popup = document.getElementById('popupForm');
     var popupContent = document.querySelector('.popup-content');
 
@@ -64,7 +64,7 @@ function addShadowOnScroll() {
         nav.style.backgroundColor = 'rgba(249, 237, 216, 0.5)';
         nav.classList.add('scrolled');
         side_icon.style.display = 'flex'
-        nav_items.forEach(items =>{
+        nav_items.forEach(items => {
             items.style.color = 'black'
         })
     } else {
@@ -73,7 +73,7 @@ function addShadowOnScroll() {
         nav.style.backgroundColor = 'transparent';
         nav.classList.remove('scrolled');
         side_icon.style.display = 'none'
-        nav_items.forEach(items =>{
+        nav_items.forEach(items => {
             items.style.color = 'white'
         })
     }
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            const offset = 70;
+            const offset = 120;
             window.scrollTo({
                 top: targetSection.offsetTop - offset,
                 behavior: 'smooth'
@@ -253,10 +253,101 @@ document.addEventListener('DOMContentLoaded', function () {
             validation.style.display = 'block';
             phone.style.border = '2px solid red';
         }
-        else{
+        else {
             validation.style.display = 'none';
             phone.style.border = '2px solid black';
         }
     });
 });
-/* phone number validation end*/
+
+/*============================= typing effect =========================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to split text into words and spaces, then wrap words in spans
+    function wrapWords(element) {
+        const text = element.textContent;
+        const wordsAndSpaces = text.split(/(\s+)/); // Split and keep the spaces
+
+        element.innerHTML = ''; // Clear existing text
+
+        wordsAndSpaces.forEach((part) => {
+            if (/\s+/.test(part)) {
+                // If the part is whitespace, add it as a text node
+                element.appendChild(document.createTextNode(part));
+            } else {
+                // If the part is a word, wrap it in a span
+                const span = document.createElement('span');
+                span.textContent = part;
+                span.classList.add('word'); // Add a class for styling if needed
+                span.style.opacity = '0'; // Initially hide the word
+                span.style.display = 'inline-block'; // Ensure proper spacing
+                span.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                span.style.transform = 'translateY(20px)'; // Initial position
+
+                // Append the span to the element
+                element.appendChild(span);
+            }
+        });
+    }
+
+    // Function to animate words with a staggered delay
+    function animateWords(element) {
+        const spans = element.querySelectorAll('span.word');
+        spans.forEach((span, index) => {
+            // Use setTimeout to stagger the animation
+            setTimeout(() => {
+                span.style.opacity = '1';
+                span.style.transform = 'translateY(0)';
+            }, index * 100); // 100ms delay between each word
+        });
+    }
+
+    // Select the text elements
+    const welcomeText = document.getElementById('welcome-text');
+    const whyChooseText = document.getElementById('why-choose-text');
+
+    // Wrap words in spans
+    wrapWords(welcomeText);
+    wrapWords(whyChooseText);
+
+    // Options for the IntersectionObserver
+    const options = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% of the section is visible
+    };
+
+    // Callback for IntersectionObserver
+    function observerCallback(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
+
+                if (sectionId === 'welcome') {
+                    animateWords(welcomeText);
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
+
+                if (sectionId === 'why_choose_us') {
+                    // Remove the hidden class to make the text visible
+                    whyChooseText.classList.remove('hidden');
+                    animateWords(whyChooseText);
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
+            }
+        });
+    }
+
+    // Create the IntersectionObserver
+    const observer = new IntersectionObserver(observerCallback, options);
+
+    // Observe the sections
+    const welcomeSection = document.getElementById('welcome');
+    const whyChooseSection = document.getElementById('why_choose_us');
+
+    observer.observe(welcomeSection);
+    observer.observe(whyChooseSection);
+});
+
+
+/* ============================= parallax effect in services section ============================= */
+

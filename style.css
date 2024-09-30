@@ -149,18 +149,6 @@ input[type=number]::-ms-reveal {
 
 /* ====================================================== desktop styles ====================================*/
 
-.logo_image {
-    height: 70px;
-    width: 70px;
-    margin-left: 7%;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .video_carousel {
     height: 50vh;
     width: 100%;
@@ -248,12 +236,12 @@ form input {
     margin-top: 5px;
 }
 
+/* Existing CSS */
 .why_choose {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5% 0 0 5%;
-
 }
 
 .why_choose_text {
@@ -284,6 +272,27 @@ form input {
     padding: 0 2% 0 0;
     text-align: left;
     width: 90%;
+}
+
+/* Hide elements with the 'hidden' class */
+.hidden {
+    display: none;
+}
+
+/* Slide-Up Animation CSS */
+.word-slide-up {
+    display: inline-block;
+    /* Allows transform and opacity to work */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .why_choose_text p {
@@ -322,6 +331,7 @@ form input {
     text-align: center;
 }
 
+/* 
 .service-card h2 {
     font-family: "Caudex", serif;
     color: #31403F;
@@ -340,6 +350,78 @@ form input {
     font-family: "Barlow", sans-serif;
     font-size: 22px;
     line-height: 33px;
+} */
+
+
+/* Parallax container */
+.parallax {
+    position: relative;
+    height: 100vh;
+    /* Full viewport height */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Individual background images */
+#parallax1 {
+    background-image: url('assets/services Images/WEDDING.webp');
+}
+
+#parallax2 {
+    background-image: url('assets/services Images/Event\ hosting.webp');
+}
+
+#parallax3 {
+    background-image: url('assets/services Images/Corporate\ events.webp');
+}
+
+#parallax4 {
+    background-image: url('assets/services Images/Catering\ service.webp');
+}
+
+#parallax5 {
+    background-image: url('assets/services Images/All\ in\ one\ decor\ package.webp');
+}
+
+#parallax6 {
+    background-image: url('assets/services Images/Event\ Planning.webp');
+}
+
+#parallax7 {
+    background-image: url('assets/services Images/Professional\ photo\ and\ video\ team.webp');
+}
+
+#parallax8 {
+    background-image: url('assets/services Images/Live\ Bands.webp');
+}
+
+/* Content inside parallax */
+.content {
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.content h2 {
+    margin-bottom: 15px;
+    font-size: 2em;
+    font-family: "Caudex", serif;
+}
+
+.content p {
+    font-size: 1.2em;
+    font-family: "Barlow", sans-serif;
+    line-height: 30px;
 }
 
 #amenities {
@@ -713,7 +795,8 @@ nav ul li a img {
 #home {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
+    /* Full viewport height */
     overflow: hidden;
 }
 
@@ -727,7 +810,8 @@ nav ul li a img {
 .banner_desktop .banner_video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the container */
+    object-fit: cover;
+    /* Ensures the video covers the container */
 }
 
 /* Mobile Banner */
@@ -740,7 +824,8 @@ nav ul li a img {
 .banner_mobile .banner_video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the container */
+    object-fit: cover;
+    /* Ensures the video covers the container */
 }
 
 
@@ -867,7 +952,8 @@ nav ul li a img {
         transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
             stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-    nav.scrolled .line  {
+
+    nav.scrolled .line {
         stroke: #000000;
     }
 
@@ -900,7 +986,6 @@ nav ul li a img {
         border-radius: 0 0 20px 20px;
         box-shadow: 0 451px 0 rgba(0, 0, 0, 0.7);
         width: 87vw;
-        margin-top: 8px;
         padding-left: 13%;
         animation: fadeIn 0.5s ease-in-out forwards;
     }
@@ -1056,8 +1141,8 @@ nav ul li a img {
     .banner_desktop {
         display: none;
     }
-    
-    .banner_mobile{
+
+    .banner_mobile {
         display: block;
     }
 
@@ -1106,7 +1191,7 @@ nav ul li a img {
     }
 
     .why_choose_text p {
-        font-size: 20px;
+        font-size: 23px;
         padding: 0 3%;
         text-align: center;
     }
@@ -1144,13 +1229,78 @@ nav ul li a img {
         padding: 5% 0;
     }
 
-    #services-reverse {
+    /* #services-reverse {
         flex-direction: column-reverse;
     }
 
+    .service-card div {
+        height: 25vh;
+    }
+/* 
     .service-card img {
         width: 100%;
         height: 30vh;
+    } */
+    */
+
+    .parallax {
+        position: relative;
+        height: 100vh;
+        /* Full viewport height */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Individual background images */
+    #parallax1 {
+        margin-top: 10px;
+        background-image: url('assets/services Images/WEDDING.webp');
+    }
+
+    #parallax2 {
+        background-image: url('assets/services Images/Event\ hosting.webp');
+    }
+
+    #parallax3 {
+        background-image: url('assets/services Images/Corporate\ events.webp');
+    }
+
+    #parallax4 {
+        background-image: url('assets/services Images/Catering\ service.webp');
+    }
+
+    #parallax5 {
+        background-image: url('assets/services Images/All\ in\ one\ decor\ package.webp');
+    }
+
+    #parallax6 {
+        background-image: url('assets/services Images/Event\ Planning.webp');
+    }
+
+    #parallax7 {
+        background-image: url('assets/services Images/Professional\ photo\ and\ video\ team.webp');
+    }
+
+    #parallax8 {
+        background-image: url('assets/services Images/Live\ Bands.webp');
+    }
+
+    .content{
+        padding: 40px 20px;
+    }
+
+    .content h2 {
+        font-size: 1.7em;
+    }
+
+    .content p {
+        font-size: 1.5em;
+        line-height: 35px;
     }
 
     #amenities {
@@ -1301,8 +1451,9 @@ nav ul li a img {
 
 @media only screen and (max-width: 380px) {
     nav ul li a img {
-        width: 135px;
-        height: 52px;
+        margin-top: 8%;
+        width: 115px;
+        height: 115px;
     }
 
     .hamburger svg {
