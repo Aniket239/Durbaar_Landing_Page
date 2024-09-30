@@ -52,6 +52,10 @@ window.onclick = function(event) {
 // ===================================== Add shadow in nav ================================
 const nav = document.querySelector('nav');
 const side_icon = document.getElementById('side_icon');
+const nav_items = document.querySelectorAll('.nav-items li a');
+console.log('====================================');
+console.log(nav_items);
+console.log('====================================');
 function addShadowOnScroll() {
     let scrollPosition = window.scrollY;
     if (scrollPosition > 0) {
@@ -60,12 +64,18 @@ function addShadowOnScroll() {
         nav.style.backgroundColor = 'rgba(249, 237, 216, 0.5)';
         nav.classList.add('scrolled');
         side_icon.style.display = 'flex'
+        nav_items.forEach(items =>{
+            items.style.color = 'black'
+        })
     } else {
         nav.style.boxShadow = "none";
         nav.style.backdropFilter = 'none';
         nav.style.backgroundColor = 'transparent';
         nav.classList.remove('scrolled');
         side_icon.style.display = 'none'
+        nav_items.forEach(items =>{
+            items.style.color = 'white'
+        })
     }
 }
 window.addEventListener('scroll', addShadowOnScroll);
