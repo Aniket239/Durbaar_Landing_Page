@@ -119,10 +119,6 @@ body {
     display: none;
 }
 
-.side_enquiry_button {
-    display: none;
-}
-
 form p {
     display: none;
     color: red;
@@ -539,6 +535,11 @@ footer#contact_us .contact-info a {
     text-decoration: none;
     line-height: 25px;
 }
+footer#contact_us .contact-info a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 footer#contact_us .contact-info a:hover {
     color: #ffffff;
@@ -560,6 +561,12 @@ footer#contact_us .social-icons a img {
 footer#contact_us .social-icons a img:hover {
     transform: scale(1.1);
     opacity: 0.8;
+}
+
+.bottom-call{
+    color: white;
+    font-size: 24px !important;
+    margin: 0 5px 1px 0;
 }
 
 
@@ -614,35 +621,31 @@ footer#contact_us .social-icons a img:hover {
     transition: all 0.3s;
 }
 
-.side_enquiry_button {
-    display: block;
-}
 
 .side_nav_button-75 {
     align-items: center;
     background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
     border: 0;
-    border-radius: 10px;
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    font-family: "Codec cold", sans-serif;
-    font-size: 16px;
+    font-family: "Caudex", serif;
+    font-size: 20px;
     font-weight: 700;
     height: 54px;
     justify-content: center;
     letter-spacing: .4px;
     line-height: 1;
-    width: 345%;
+    width: 200px;
     padding: 0 20px 0 20px;
     text-decoration: none;
     text-transform: uppercase;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin-top: 30px;
+    margin: 30px 0 0 -17px;
     transform: rotate(90deg) translateY(62px) translatex(28px);
 }
 
@@ -760,16 +763,15 @@ footer#contact_us .social-icons a img:hover {
         align-items: center;
         background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
         border: 0;
-        border-radius: 10px;
         box-sizing: border-box;
         color: #fff;
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        font-family: "Codec cold", sans-serif;
-        font-size: 16px;
+        font-family: "Caudex", serif;
+        font-size: 19px;
         font-weight: 700;
-        height: 54px;
+        height: 70px;
         justify-content: center;
         letter-spacing: .4px;
         line-height: 1;
@@ -1062,12 +1064,27 @@ footer#contact_us .social-icons a img:hover {
     footer#contact_us .contact-info .info-item{
         width: 100%;
     }
+    footer#contact_us .contact-info a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bottom-call{
+        color: white;
+        font-size: 24px !important;
+        margin: 0 5px 1px 0;
+    }
 }
 
 
 @media only screen and (max-width: 380px) {
     .heading {
         font-size: 23px;
+    }
+
+    .bottom_nav_button-75{
+        height: 65px;
+        font-size: 16px;
     }
 
     .why_choose_text p {

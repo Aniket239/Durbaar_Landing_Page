@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
     
             if (window.innerWidth >= 768) {
-                side_enquiry_button.style.display = 'block';
+                side_enquiry_button.style.display = 'flex';
             }
         } else {
             navbar.style.backgroundColor = 'transparent';
