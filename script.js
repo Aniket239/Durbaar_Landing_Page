@@ -1,11 +1,3 @@
-document.getElementById('openPopup').onclick = function() {
-    var popup = document.getElementById('popupForm');
-    popup.style.display = 'block';
-    document.body.classList.add('blurred');
-    document.body.style.overflow = 'hidden';
-
-};
-
 document.getElementsByClassName('close')[0].onclick = function() {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'none';
@@ -87,9 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
         var navbar = document.getElementById("navbar");
         var menuTags = document.querySelectorAll('.menu_tag');
         var sideIcons = document.getElementById("side_icon");
-    
-        if (window.scrollY > 150) {
-            navbar.style.backgroundColor = 'white';
+        if (window.scrollY > 0) {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+            navbar.style.backdropFilter = 'blur(10px)'
             navbar.classList.add('scrolled');
             bottom_nav.style.display = 'flex';
             sideIcons.style.display = 'flex';
@@ -106,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             navbar.style.backgroundColor = 'transparent';
+            navbar.style.backdropFilter = 'blur(0px)'
             navbar.classList.remove('scrolled');
             sideIcons.style.display = 'none';
             
