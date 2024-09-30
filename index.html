@@ -64,24 +64,60 @@
     <!-- End Google Tag Manager (noscript) -->
 
 
-    <nav class="navbar" id="navbar">
-        <div class="logo">
-            <img loading="lazy" src="./assets/mobile_logo.png" alt="DARBAR" class="logo_image" />
-        </div>
-        <button class="hamburger" id="hamburgerButton">
-            ☰
-        </button>
-        <div class="menu" id="menu">
-            <a href="#home" class="menu_tag" id="menu_tag">Home</a>
-            <a href="#why_choose_us" class="menu_tag" id="menu_tag">Why Choose Us</a>
-            <a href="#services" class="menu_tag" id="menu_tag">Our Services</a>
-            <a href="#amenities" class="menu_tag" id="menu_tag">Amenities</a>
-            <a href="#gallary" class="menu_tag" id="menu_tag">Gallery</a>
-            <a href="#map" class="menu_tag" id="menu_tag">Map</a>
-            <a href="#contact_us" class="menu_tag" id="menu_tag">Contact</a>
-        </div>
+    <nav>
+        <ul id="nav-links">
+            <li>
+                <a href="#main">
+                    <img loading="lazy" src="assets/mobile_logo.png" alt="logo">
+                </a>
+            </li>
+        </ul>
+        <ul class="nav-items" id="nav-links">
+            <li>
+                <a href="#about-the-project">About</a>
+            </li>
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+            <li>
+                <a href="#amenities">Amenities</a>
+            </li>
+            <li>
+                <a href="#floor-plans">Floor Plans</a>
+            </li>
+            <li>
+                <a href="#location-map">Location Map</a>
+            </li>
+            <li>
+                <a href="#home-loan">Home Loan</a>
+            </li>
+        </ul>
+        <ul class="nav-items-hamburger" id="nav-links">
+            <li>
+                <label class="hamburger">
+                    <input type="checkbox" onclick="openMenu()" id="hamburger-checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom"
+                            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                        </path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+            </li>
+        </ul>
     </nav>
-
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="#main">Home</a></li>
+            <li><a href="#about-the-project">Overview</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#floor-plans">Floor Plans</a></li>
+            <li><a href="#location-map">Location Map</a></li>
+            <li><a href="#home-loan">Home Loan</a></li>
+        </ul>
+    </div>
+    
     <div class="bottom_nav" id="bottom_nav">
         <button class="bottom_nav_button-75" id="openPopup_bottom_nav">ENQUIRE NOW</button>
     </div>
@@ -99,10 +135,20 @@
         </div>
     </div>
     <section id="home">
-        <div class="banner">
-
+        <div class="banner_desktop">
+            <video autoplay muted loop class="banner_video">
+                <source src="assets/landscape.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="banner_mobile">
+            <video autoplay muted loop class="banner_video">
+                <source src="assets/portrait.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
+    
 
 
 

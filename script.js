@@ -47,88 +47,150 @@ window.onclick = function(event) {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerButton = document.getElementById('hamburgerButton');
-    const menu = document.getElementById('menu');
-    const menuLinks = menu.querySelectorAll('a');
 
-    hamburgerButton.addEventListener('click', () => {
-        menu.classList.toggle('open');
-    });
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default anchor behavior
-            const targetId = link.getAttribute('href').substring(1);
+// ===================================== Add shadow in nav ================================
+const nav = document.querySelector('nav');
+const side_icon = document.getElementById('side_icon');
+function addShadowOnScroll() {
+    let scrollPosition = window.scrollY;
+    if (scrollPosition > 0) {
+        nav.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
+        nav.style.backdropFilter = 'blur(10px)';
+        nav.style.backgroundColor = 'rgba(249, 237, 216, 0.5)';
+        nav.classList.add('scrolled');
+        side_icon.style.display = 'flex'
+    } else {
+        nav.style.boxShadow = "none";
+        nav.style.backdropFilter = 'none';
+        nav.style.backgroundColor = 'transparent';
+        nav.classList.remove('scrolled');
+        side_icon.style.display = 'none'
+    }
+}
+window.addEventListener('scroll', addShadowOnScroll);
+// ================================================== scroll to section =========================================================
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            const navbarHeight = document.getElementById('navbar').offsetHeight;
-            const targetPosition = targetSection.offsetTop - navbarHeight;
-
+            const offset = 70;
             window.scrollTo({
-                top: targetPosition,
+                top: targetSection.offsetTop - offset,
                 behavior: 'smooth'
             });
+        });
+    });
+});
+function openMenu() {
+    var checkbox = document.getElementById('hamburger-checkbox');
+    const mobileNav = document.querySelector('.mobile-nav');
+    if (checkbox.checked) {
+        mobileNav.style.display = 'flex';
+        mobileNav.style.animationName = 'fadeIn';
+    } else {
+        mobileNav.style.animationName = 'fadeOut';
+        setTimeout(() => {
+            mobileNav.style.display = 'none';
+        }, 500);  // Delay hiding the menu to allow the animation to complete
+    }
+}
 
-            menu.classList.remove('open');
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('#nav-links a');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    const mobileNav = document.querySelector('.mobile-nav');
+    var checkbox = document.getElementById('hamburger-checkbox');
+
+    // Function to set the active section
+    function setActiveSection(sectionId) {
+        mobileNavLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === sectionId) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Function to handle scroll event
+    function handleScroll() {
+        let fromTop = window.scrollY + 80;
+        let activeSet = false;
+        mobileNavLinks.forEach(link => {
+            let section = document.getElementById(link.getAttribute('href').substring(1));
+            if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                link.classList.add('active');
+                activeSet = true;
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        return activeSet;
+    }
+
+    // Add click event listeners to navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            mobileNav.style.display = 'none';
+            checkbox.checked = false;
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            const offset = 70;
+            window.scrollTo({
+                top: targetSection.offsetTop - offset,
+                behavior: 'smooth'
+            });
+            setActiveSection(targetId);
         });
     });
 
-    window.addEventListener('scroll', () => {
-        var bottom_nav = document.getElementById("bottom_nav");
-        var side_enquiry_button = document.getElementById("side_enquiry_button");
-        var navbar = document.getElementById("navbar");
-        var menuTags = document.querySelectorAll('.menu_tag');
-        var sideIcons = document.getElementById("side_icon");
-        if (window.scrollY > 0) {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
-            navbar.style.backdropFilter = 'blur(10px)'
-            navbar.classList.add('scrolled');
-            bottom_nav.style.display = 'flex';
-            sideIcons.style.display = 'flex';
-            
-            // Change menu color to black only on non-mobile view
-            if (window.innerWidth >= 768) {
-                menuTags.forEach(tag => {
-                    tag.style.color = 'black';
-                });
-            }
-    
-            if (window.innerWidth >= 768) {
-                side_enquiry_button.style.display = 'flex';
-            }
-        } else {
-            navbar.style.backgroundColor = 'transparent';
-            navbar.style.backdropFilter = 'blur(0px)'
-            navbar.classList.remove('scrolled');
-            sideIcons.style.display = 'none';
-            
-            // Change menu color to white on scroll up
-            if (window.innerWidth >= 768) {
-                menuTags.forEach(tag => {
-                    tag.style.color = 'white';
-                });
-            }
-    
-            bottom_nav.style.display = 'none';
-            if (window.innerWidth > 768) {
-                side_enquiry_button.style.display = 'none';
-            }
-        }
-    
-        // Ensure menu color stays white in mobile view
-        if (window.innerWidth < 768) {
-            menuTags.forEach(tag => {
-                tag.style.color = 'white';
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            mobileNav.style.display = 'none';
+            checkbox.checked = false;
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            const offset = 70;
+            window.scrollTo({
+                top: targetSection.offsetTop - offset,
+                behavior: 'smooth'
             });
+            setActiveSection(targetId);
+        });
+    });
+
+    // Check initial scroll position on load
+    window.addEventListener('load', function () {
+        const activeSet = handleScroll();
+        if (!activeSet) {
+            mobileNavLinks[0].classList.add('active');
         }
     });
-    
-    
-    
-    
+
+    // Handle scroll event
+    window.addEventListener('scroll', handleScroll);
+});
+// ================================================== nav items animation =========================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('#nav-links li');
+
+    navLinks.forEach((link, index) => {
+        setTimeout(() => {
+            link.classList.add('animate');
+        }, 200 * index);
+    });
+});
 
 
-
+document.addEventListener('DOMContentLoaded', () => {
     // Slider functionality
     const slides = document.querySelectorAll('.slide');
     let counter = 0;
