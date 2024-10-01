@@ -1143,6 +1143,10 @@ nav ul li a img {
         touch-action: manipulation;
     }
 
+    #home{
+        height: 90vh;
+    }
+
     .main_div {
         width: 90%;
         height: 223px;
