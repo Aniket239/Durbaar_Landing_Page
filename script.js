@@ -32,6 +32,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 /*========================================================================================================================== */
 
+
+/*===================================== scroll after video ends ================================================== */
+document.addEventListener('DOMContentLoaded', function() {
+    // Set a timeout for 30 seconds (30000 milliseconds)
+    setTimeout(function() {
+        // Select the welcome section
+        var welcomeSection = document.getElementById('welcome');
+        
+        if (welcomeSection) {
+            // Calculate the position to scroll to, subtracting the offset (70px)
+            var offset = 85; // Offset in pixels
+            var elementPosition = welcomeSection.getBoundingClientRect().top + window.pageYOffset;
+            var offsetPosition = elementPosition - offset;
+            
+            // Scroll to the calculated position smoothly
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            console.warn('Element with id "welcome" not found.');
+        }
+    }, 31000); // 30000 milliseconds = 30 seconds
+});
+
+
+/*========================================================================================================================== */
+
 document.getElementsByClassName('close')[0].onclick = function () {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'none';
