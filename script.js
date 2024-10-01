@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            const offset = 120;
+            const offset = 140;
             window.scrollTo({
                 top: targetSection.offsetTop - offset,
                 behavior: 'smooth'
