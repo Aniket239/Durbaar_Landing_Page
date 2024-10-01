@@ -145,21 +145,14 @@
             <button class="side_nav_button-75" id="openPopup_side_nav">ENQUIRE NOW</button>
         </div>
     </div>
-    <section id="home">
-        <div class="banner_desktop">
-            <video autoplay muted loop class="banner_video">
-                <source src="assets/landscape.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="banner_mobile">
-            <video autoplay muted loop class="banner_video">
-                <source src="assets/Durbaar-LP-video banner potrait.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </section>
 
+    <section id="home">
+        <video muted loop class="banner_video" data-autoplay>
+            <source data-src="assets/Durbaar Lp Video portrait.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source data-src="assets/landscape.mp4" type="video/mp4" media="(min-width: 769px)">
+            Your browser does not support the video tag.
+        </video>
+    </section>
 
     <!-- Popup Form -->
     <div id="popupForm" class="popup">

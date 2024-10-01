@@ -1,3 +1,37 @@
+/* ===================================== banner lazy load ============================================*/
+document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll('video[data-autoplay]');
+
+    const loadVideo = (video) => {
+        const sources = video.querySelectorAll('source[data-src]');
+        sources.forEach(source => {
+            source.src = source.getAttribute('data-src');
+        });
+        video.load();
+        video.play();
+    };
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.25
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadVideo(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    videos.forEach(video => {
+        observer.observe(video);
+    });
+});
+/*========================================================================================================================== */
+
 document.getElementsByClassName('close')[0].onclick = function () {
     var popup = document.getElementById('popupForm');
     popup.style.display = 'none';
@@ -347,7 +381,3 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(welcomeSection);
     observer.observe(whyChooseSection);
 });
-
-
-/* ============================= parallax effect in services section ============================= */
-
