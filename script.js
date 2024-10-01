@@ -34,27 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*===================================== scroll after video ends ================================================== */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Set a timeout for 30 seconds (30000 milliseconds)
-    setTimeout(function() {
-        // Select the welcome section
-        var welcomeSection = document.getElementById('welcome');
-        
-        if (welcomeSection) {
-            // Calculate the position to scroll to, subtracting the offset (70px)
-            var offset = 85; // Offset in pixels
-            var elementPosition = welcomeSection.getBoundingClientRect().top + window.pageYOffset;
-            var offsetPosition = elementPosition - offset;
-            
-            // Scroll to the calculated position smoothly
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        } else {
-            console.warn('Element with id "welcome" not found.');
-        }
-    }, 32000); // 30000 milliseconds = 30 seconds
+        setTimeout(function () {
+            // Select the welcome section
+            var welcomeSection = document.getElementById('welcome');
+            console.log('====================================');
+            console.log(window.scrollY);
+            console.log('====================================');
+            if (welcomeSection && window.scrollY < 150) {
+                // Calculate the position to scroll to, subtracting the offset (70px)
+                var offset = 85; // Offset in pixels
+                var elementPosition = welcomeSection.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - offset;
+
+                // Scroll to the calculated position smoothly
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.warn('Element with id "welcome" not found.');
+            }
+        }, 32000); // 30000 milliseconds = 30 seconds
 });
 
 
@@ -121,13 +123,13 @@ console.log('====================================');
 function addShadowOnScroll() {
     let scrollPosition = window.scrollY;
     if (scrollPosition > 0) {
-        nav.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
-        nav.style.backdropFilter = 'blur(10px)';
-        nav.style.backgroundColor = 'rgba(249, 237, 216, 0.5)';
+        nav.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.7)";
+        nav.style.backdropFilter = 'blur(15px)';
+        nav.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
         nav.classList.add('scrolled');
         side_icon.style.display = 'flex'
         nav_items.forEach(items => {
-            items.style.color = 'black'
+            items.style.color = '#986048'
         })
     } else {
         nav.style.boxShadow = "none";
@@ -262,37 +264,108 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Slider functionality
-    const slides = document.querySelectorAll('.slide');
-    let counter = 0;
-    slides.forEach((slide, index) => {
-        slide.style.left = `${index * 100}%`;
-    });
+/*============================== gallery scroll ============================================== */
 
-    const slideImages = () => {
-        slides.forEach((slide) => {
-            slide.style.transform = `translateX(-${counter * 100}%)`;
-        });
-    };
+const carousel = document.querySelector('.carousel')
+const slider = carousel.querySelector('.carousel_track')
+let slides = [...slider.children]
 
-    window.goNextImage = () => {
-        counter++;
-        if (counter >= slides.length) {
-            counter = 0;
+// Initial slides position, so user can go from first to last slide (click to the left first)
+slider.prepend(slides[slides.length - 1])
+
+// Creating dot for each slide
+const createDots = (carousel, initSlides) => {
+    const dotsContainer = document.createElement('div')
+    dotsContainer.classList.add('carousel_nav')
+
+    initSlides.forEach((slide, index) => {
+        const dot = document.createElement('button')
+        dot.type = 'button'
+        dot.classList.add('carousel_dot')
+        dot.setAttribute('aria-label', `Slide number ${index + 1}`)
+        slide.dataset.position = index
+        slide.classList.contains('is-selected') && dot.classList.add('is-selected')
+        dotsContainer.appendChild(dot)
+    })
+
+    carousel.appendChild(dotsContainer)
+
+    return dotsContainer
+}
+
+// Updating relevant dot
+const updateDot = slide => {
+    const currDot = dotNav.querySelector('.is-selected')
+    const targetDot = slide.dataset.position
+
+    currDot.classList.remove('is-selected')
+    dots[targetDot].classList.add('is-selected')
+}
+
+// Handling arrow buttons
+const handleArrowClick = arrow => {
+    arrow.addEventListener('click', () => {
+        slides = [...slider.children]
+        const currSlide = slider.querySelector('.is-selected')
+        currSlide.classList.remove('is-selected')
+        let targetSlide
+
+        if (arrow.classList.contains('jsPrev')) {
+            targetSlide = currSlide.previousElementSibling
+            slider.prepend(slides[slides.length - 1])
         }
-        slideImages();
-    };
 
-    window.goPrevImage = () => {
-        counter--;
-        if (counter < 0) {
-            counter = slides.length - 1;
+        if (arrow.classList.contains('jsNext')) {
+            targetSlide = currSlide.nextElementSibling
+            slider.append(slides[0])
         }
-        slideImages();
-    };
 
-});
+        targetSlide.classList.add('is-selected')
+        updateDot(targetSlide)
+    })
+}
+
+const buttons = carousel.querySelectorAll('.carousel_btn')
+buttons.forEach(handleArrowClick)
+
+// Handling dot buttons
+const handleDotClick = dot => {
+    const dotIndex = dots.indexOf(dot)
+    const currSlidePos = slider.querySelector('.is-selected').dataset.position
+    const targetSlidePos = slider.querySelector(`[data-position='${dotIndex}']`).dataset.position
+
+    if (currSlidePos < targetSlidePos) {
+        const count = targetSlidePos - currSlidePos
+        for (let i = count; i > 0; i--) nextBtn.click()
+    }
+
+    if (currSlidePos > targetSlidePos) {
+        const count = currSlidePos - targetSlidePos
+        for (let i = count; i > 0; i--) prevBtn.click()
+    }
+}
+
+const dotNav = createDots(carousel, slides)
+const dots = [...dotNav.children]
+const prevBtn = buttons[0]
+const nextBtn = buttons[1]
+
+dotNav.addEventListener('click', e => {
+    const dot = e.target.closest('button')
+    if (!dot) return
+    handleDotClick(dot)
+})
+
+// Auto sliding
+const slideTiming = 3000
+let interval
+const slideInterval = () => interval = setInterval(() => nextBtn.click(), slideTiming)
+
+carousel.addEventListener('mouseover', () => clearInterval(interval))
+carousel.addEventListener('mouseleave', slideInterval)
+slideInterval()
+
+/*============================== gallery scroll ============================================== */
 
 /* phone number validation start*/
 document.addEventListener('DOMContentLoaded', function () {
@@ -321,6 +394,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
 
 /*============================= typing effect =========================================== */
 document.addEventListener('DOMContentLoaded', () => {

@@ -17,6 +17,10 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff2e0;
+    background-image: url(assets/background.png);
+    background-position: 50%;
+    background-size: auto;
 }
 
 * {
@@ -42,7 +46,8 @@ body {
 #home {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
+    /* Full viewport height */
     overflow: hidden;
 }
 
@@ -53,9 +58,12 @@ body {
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the container without distortion */
-    transform: translate(-50%, -50%); /* Centers the video */
-    z-index: -1; /* Places the video behind other content */
+    object-fit: cover;
+    /* Ensures the video covers the container without distortion */
+    transform: translate(-50%, -50%);
+    /* Centers the video */
+    z-index: -1;
+    /* Places the video behind other content */
 }
 
 /* Optional: Overlay content on top of the video */
@@ -73,7 +81,8 @@ body {
 /* Example: Centered content within #home */
 #home .content {
     position: relative;
-    z-index: 1; /* Places content above the video and overlay */
+    z-index: 1;
+    /* Places content above the video and overlay */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -424,35 +433,35 @@ form input {
 
 /* Individual background images */
 #parallax1 {
-    background-image: url('assets/services Images/WEDDING.webp');
+    background-image: url('assets/services Images/services\ desktop/WEDDING.webp');
 }
 
 #parallax2 {
-    background-image: url('assets/services Images/Event\ hosting.webp');
+    background-image: url('assets/services Images/services\ desktop/Event\ hosting.webp');
 }
 
 #parallax3 {
-    background-image: url('assets/services Images/Corporate\ events.webp');
+    background-image: url('assets/services Images/services\ desktop/Corporate\ events.webp');
 }
 
 #parallax4 {
-    background-image: url('assets/services Images/Catering\ service.webp');
+    background-image: url('assets/services Images/services\ desktop/Catering\ service.webp');
 }
 
 #parallax5 {
-    background-image: url('assets/services Images/All\ in\ one\ decor\ package.webp');
+    background-image: url('assets/services Images/services\ desktop/All\ in\ one\ decor\ package.webp');
 }
 
 #parallax6 {
-    background-image: url('assets/services Images/Event\ Planning.webp');
+    background-image: url('assets/services Images/services\ desktop/Event\ Planning.webp');
 }
 
 #parallax7 {
-    background-image: url('assets/services Images/Professional\ photo\ and\ video\ team.webp');
+    background-image: url('assets/services Images/services\ desktop/Professional\ photo\ and\ video\ team.webp');
 }
 
 #parallax8 {
-    background-image: url('assets/services Images/Live\ Bands.webp');
+    background-image: url('assets/services Images/services\ desktop/Live\ Bands.webp');
 }
 
 /* Content inside parallax */
@@ -482,7 +491,6 @@ form input {
     display: flex;
     flex-direction: row;
     padding: 50px;
-    background-color: #f9f9f9;
     /* Optional: Change as needed */
 }
 
@@ -554,6 +562,158 @@ form input {
     justify-content: center;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel {
+    --color-default-state: #ddd;
+    --color-active-state: #14005a;
+    position: relative;
+    width: 80vw;
+    height: 80vmin;
+  }
+  
+  .carousel_track-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel_track {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .carousel_slide,
+  .carousel_image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carousel_slide {
+    padding: 5% 12% 8%;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: transform .3s ease-out;
+  }
+  
+  .carousel_slide.is-selected {
+    transform: translateX(0);
+  }
+  
+  .carousel_slide.is-selected ~ .carousel_slide {
+    transform: translateX(100%);
+  }
+  
+  .carousel_image {
+    z-index: -1;
+  }
+  
+  .carousel_image > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+  }
+  
+  .carousel_title {
+    font-size: 40px;
+    color: #fff;
+  }
+  
+  .carousel_btn,
+  .carousel_dot {
+    z-index: 1;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .carousel_btn {
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    transform: translateY(-50%);
+  }
+  
+  .carousel_btn:focus,
+  .carousel_dot:focus,
+  .carousel_btn:active,
+  .carousel_dot:active {
+    outline: none;
+  }
+  
+  .carousel_btn > * {
+    pointer-events: none;
+  }
+  
+  .carousel_btn svg {
+    fill: var(--color-default-state);
+    transform-origin: center;
+    transition: fill .2s;
+  }
+  
+  .carousel_btn:hover svg {
+    fill: var(--color-active-state);
+  }
+  
+  .jsPrev {
+    left: 10px;
+  }
+  
+  .jsNext {
+    right: 10px;
+  }
+  
+  .jsPrev svg {
+    transform: rotate(-90deg);
+  }
+  
+  .jsNext svg {
+    transform: rotate(90deg);
+  }
+  
+  .carousel_nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel_dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-default-state);
+    transition: background-color .2s;
+  }
+  
+  .carousel_dot + .carousel_dot {
+    margin-left: 20px;
+  }
+  
+  .carousel_dot.is-selected {
+    background-color: var(--color-active-state);
+  }
+  
 .video_container {
     margin-top: 50px;
     display: grid;
@@ -584,7 +744,6 @@ form input {
 
 #map.map-section {
     padding: 60px 20px;
-    background-color: #f9f9f9;
     /* Light gray background for contrast */
     text-align: center;
     /* Center align heading */
@@ -748,10 +907,10 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
+    font-family: "Cinzel", serif;
     color: #ffffff;
     font-size: 20px;
-    font-family: "Jost", sans-serif;
-    font-weight: 550;
+    font-weight: 600;
     transition: all 0.3s;
 }
 
@@ -957,7 +1116,7 @@ nav ul li a img {
     }
 
     .hamburger svg {
-        height: 3.3em;
+        height: 3em;
         transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -1004,7 +1163,7 @@ nav ul li a img {
         border-radius: 0 0 20px 20px;
         box-shadow: 0 451px 0 rgba(0, 0, 0, 0.7);
         width: 87vw;
-        padding-left: 13%;
+        padding: 50px 0 0 13%;
         animation: fadeIn 0.5s ease-in-out forwards;
     }
 
@@ -1053,8 +1212,8 @@ nav ul li a img {
         text-decoration: none;
         color: black;
         margin-bottom: 40px;
-        font-family: "Playfair Display", serif;
-        font-size: 25px;
+        font-family: "Cinzel", serif;
+        font-size: 23px;
         font-weight: 600;
         padding: 10px 15px;
     }
@@ -1062,7 +1221,7 @@ nav ul li a img {
     .mobile-nav a.active {
         color: #7E4B2C;
         padding: 10px 15px;
-        font-size: 28px;
+        font-size: 26px;
         position: relative;
         /* Needed for the pseudo-element positioning */
     }
@@ -1143,7 +1302,7 @@ nav ul li a img {
         touch-action: manipulation;
     }
 
-    #home{
+    #home {
         height: 90vh;
     }
 
@@ -1254,8 +1413,6 @@ nav ul li a img {
         width: 100%;
         height: 30vh;
     } */
-    */
-
     .parallax {
         position: relative;
         height: 100vh;
@@ -1263,7 +1420,7 @@ nav ul li a img {
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1272,38 +1429,38 @@ nav ul li a img {
     /* Individual background images */
     #parallax1 {
         margin-top: 10px;
-        background-image: url('assets/services Images/WEDDING.webp');
+        background-image: url('assets/services Images/Services mobile/wedding.jpg');
     }
 
     #parallax2 {
-        background-image: url('assets/services Images/Event\ hosting.webp');
+        background-image: url('assets/services Images/Services mobile/Event\ hosting.jpg');
     }
 
     #parallax3 {
-        background-image: url('assets/services Images/Corporate\ events.webp');
+        background-image: url('assets/services Images/Services mobile/Corporate\ events.jpg');
     }
 
     #parallax4 {
-        background-image: url('assets/services Images/Catering\ service.webp');
+        background-image: url('assets/services Images/Services mobile/Catering\ service.jpg');
     }
 
     #parallax5 {
-        background-image: url('assets/services Images/All\ in\ one\ decor\ package.webp');
+        background-image: url('assets/services Images/Services mobile/All\ in\ one\ decor\ package.jpg');
     }
 
     #parallax6 {
-        background-image: url('assets/services Images/Event\ Planning.webp');
+        background-image: url('assets/services Images/Services mobile/Event\ Planning.jpg');
     }
 
     #parallax7 {
-        background-image: url('assets/services Images/Professional\ photo\ and\ video\ team.webp');
+        background-image: url('assets/services Images/Services mobile/Professional\ photo\ and\ video\ team.jpg');
     }
 
     #parallax8 {
-        background-image: url('assets/services Images/Live\ Bands.webp');
+        background-image: url('assets/services Images/Services mobile/dj\ and\ live\ music.jpg');
     }
 
-    .content{
+    .content {
         padding: 40px 20px;
     }
 
@@ -1470,27 +1627,31 @@ nav ul li a img {
     }
 
     .hamburger svg {
-        height: 2.6em;
+        height: 2.3em;
     }
 
     .mobile-nav {
         height: 70vh;
         /* padding-top: 30px; */
-        margin-top: 0;
+        padding-top: 20px;
     }
 
     .mobile-nav a {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .mobile-nav a.active {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .mobile-nav a.active::before {
         font-size: 20px;
         top: 14.5%;
         left: -8px;
+    }
+
+    .side_icon {
+        margin-top: 145%;
     }
 
     .side-nav-whatsapp-icon {
