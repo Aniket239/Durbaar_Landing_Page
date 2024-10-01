@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.warn('Element with id "welcome" not found.');
         }
-    }, 31000); // 30000 milliseconds = 30 seconds
+    }, 32000); // 30000 milliseconds = 30 seconds
 });
 
 
