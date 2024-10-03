@@ -29,11 +29,18 @@ body {
 
 }
 
-/* button css start */
-.durbaar_word {
-    font-size: 16px;
-    font-weight: bold;
-}
+::-webkit-scrollbar {
+    width: 10px;
+    border-left: 1px solid black;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #7E4B2C;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
 
 .heading {
     font-family: "Cinzel", serif;
@@ -46,9 +53,21 @@ body {
 #home {
     position: relative;
     width: 100%;
-    height: 100vh;
-    /* Full viewport height */
+    height: 100vh; /* Full viewport height */
     overflow: hidden;
+}
+
+/* Image styling */
+.banner_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 /* Video styling */
@@ -58,12 +77,17 @@ body {
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: fill;
-    /* Ensures the video covers the container without distortion */
+    object-fit: cover; /* Changed from 'fill' to 'cover' for better aspect ratio */
     transform: translate(-50%, -50%);
-    /* Centers the video */
-    z-index: -1;
-    /* Places the video behind other content */
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* When video is ready, show it */
+.banner_video.playing {
+    opacity: 1;
+    z-index: 1;
 }
 
 /* Optional: Overlay content on top of the video */
@@ -311,6 +335,7 @@ form label{
     width: 27px;
     background-size: 100%;
     margin-right: 5px;
+    mix-blend-mode: darken;
 }
 
 .facilities ul p {
@@ -1284,6 +1309,12 @@ nav ul li a img {
         border: 2px solid #98614A;
     }
 
+    .banner_image{
+        left: 41%;
+        width: 117%;
+        object-fit: cover;
+    }
+
     #home {
         height: 88vh;
     }
@@ -1368,7 +1399,6 @@ nav ul li a img {
         background-size: 100%;
         background-repeat: no-repeat;
         margin-top: 1%;
-        mix-blend-mode: darken;
     }
 
     .services {
@@ -1550,6 +1580,7 @@ nav ul li a img {
         background-color: #fefefe;
         margin: 50% auto;
         width: 78%;
+        padding: 10% 7%;
     }
 
     form input::placeholder {

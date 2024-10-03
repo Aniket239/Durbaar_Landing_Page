@@ -1,35 +1,64 @@
 /* ===================================== banner lazy load ============================================*/
 document.addEventListener("DOMContentLoaded", () => {
-    const videos = document.querySelectorAll('video[data-autoplay]');
+    const video = document.getElementById('bannerVideo');
+    const bannerImage = document.querySelector('.banner_image');
+    const muteToggle = document.getElementById('muteToggle');
+    const muteButtonIcon = document.getElementById('mute_button');
 
-    const loadVideo = (video) => {
+    const loadVideoSources = () => {
         const sources = video.querySelectorAll('source[data-src]');
         sources.forEach(source => {
             source.src = source.getAttribute('data-src');
         });
         video.load();
-        video.play();
     };
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.25
+    const handleVideoPlay = () => {
+        // Fade out the image and fade in the video
+        bannerImage.style.opacity = '0';
+        video.classList.add('playing');
     };
 
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                loadVideo(entry.target);
-                obs.unobserve(entry.target);
-            }
+    const handleVideoCanPlay = () => {
+        video.play().then(() => {
+            handleVideoPlay();
+        }).catch(error => {
+            console.error("Error attempting to play the video:", error);
+            // Optionally, keep showing the image if video fails to play
         });
-    }, observerOptions);
+    };
 
-    videos.forEach(video => {
+    const setupIntersectionObserver = () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.25
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    loadVideoSources();
+                    video.addEventListener('canplaythrough', handleVideoCanPlay, { once: true });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
         observer.observe(video);
-    });
+    };
+
+    const toggleMute = () => {
+        video.muted = !video.muted;
+        muteButtonIcon.textContent = video.muted ? 'volume_off' : 'volume_up';
+    };
+
+    muteToggle.addEventListener('click', toggleMute);
+
+    // Initialize
+    setupIntersectionObserver();
 });
+
 /*========================================================================================================================== */
 
 
@@ -58,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, 32000); // 30000 milliseconds = 30 seconds
 });
-
 
 /*========================================================================================================================== */
 
@@ -262,38 +290,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 200 * index);
     });
 });
-
-
-/* ================================================ mute video =================================== */
-document.addEventListener('DOMContentLoaded', function () {
-    const video = document.getElementById('bannerVideo');
-    const muteToggle = document.getElementById('muteToggle');
-    const mute_button = document.getElementById('mute_button');
-
-    // Function to update the button icon based on mute state
-    function updateButton() {
-        if (video.muted) {
-            // muteToggle.textContent = '🔇'; // Muted icon
-            mute_button.textContent = 'volume_off'
-        } else {
-            // muteToggle.textContent = '🔊'; // Unmuted icon
-            mute_button.textContent = 'volume_up'
-        }
-    }
-
-    // Initialize button state
-    updateButton();
-
-    // Event listener for the button
-    muteToggle.addEventListener('click', function () {
-        video.muted = !video.muted;
-        updateButton();
-    });
-
-    // Optional: Sync button if video is muted/unmuted by other means
-    video.addEventListener('volumechange', updateButton);
-});
-
 
 /*============================== gallery scroll ============================================== */
 
