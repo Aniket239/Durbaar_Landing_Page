@@ -1589,6 +1589,9 @@ nav ul li a img {
 
 
 @media only screen and (max-width: 380px) {
+    #home{
+        height: 85vh;
+    }
     nav ul li a img {
         margin-top: 8%;
         width: 115px;
