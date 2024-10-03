@@ -264,6 +264,34 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ================================================ mute video =================================== */
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('bannerVideo');
+    const muteToggle = document.getElementById('muteToggle');
+
+    // Function to update the button icon based on mute state
+    function updateButton() {
+        if (video.muted) {
+            muteToggle.textContent = '🔇'; // Muted icon
+        } else {
+            muteToggle.textContent = '🔊'; // Unmuted icon
+        }
+    }
+
+    // Initialize button state
+    updateButton();
+
+    // Event listener for the button
+    muteToggle.addEventListener('click', function () {
+        video.muted = !video.muted;
+        updateButton();
+    });
+
+    // Optional: Sync button if video is muted/unmuted by other means
+    video.addEventListener('volumechange', updateButton);
+});
+
+
 /*============================== gallery scroll ============================================== */
 
 const carousel = document.querySelector('.carousel')

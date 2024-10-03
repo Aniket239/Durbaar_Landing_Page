@@ -147,12 +147,19 @@
     </div>
 
     <section id="home">
-        <video muted loop class="banner_video" data-autoplay>
-            <source data-src="assets/Banner Video Portrait.mp4" type="video/mp4" media="(max-width: 768px)">
-            <source data-src="assets/Banner Video Landscape.mp4" type="video/mp4" media="(min-width: 769px)">
-            Your browser does not support the video tag.
-        </video>
+        <div class="video_wrapper">
+            <video id="bannerVideo" muted loop class="banner_video" data-autoplay>
+                <source data-src="assets/Banner Video Portrait.mp4" type="video/mp4" media="(max-width: 768px)">
+                <source data-src="assets/Banner Video Landscape.mp4" type="video/mp4" media="(min-width: 769px)">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Mute/Unmute Button -->
+            <button id="muteToggle" class="mute-button" aria-label="Mute/Unmute Video">
+                🔇
+            </button>
+        </div>
     </section>
+    
 
     <!-- Popup Form -->
     <div id="popupForm" class="popup">
@@ -578,7 +585,6 @@
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
                 </div>
             </div>
     </section>
