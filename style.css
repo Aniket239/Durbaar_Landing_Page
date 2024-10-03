@@ -124,33 +124,7 @@ body {
     display: none;
 }
 
-form p {
-    display: none;
-    color: red;
-    margin-top: 5px;
-}
 
-/* Hide the arrows in input of type number */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-/* For Internet Explorer */
-input[type=number]::-ms-clear {
-    display: none;
-}
-
-/* For Edge */
-input[type=number]::-ms-reveal {
-    display: none;
-}
 
 /* ====================================================== desktop styles ====================================*/
 
@@ -181,7 +155,7 @@ input[type=number]::-ms-reveal {
     left: 0;
     top: 0;
     width: 100%;
-    overflow: auto;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -189,38 +163,90 @@ input[type=number]::-ms-reveal {
 .popup-content {
     background-color: #fefefe;
     margin: 8% auto;
-    padding: 2% 2% 7%;
+    padding: 6% 4%;
     width: 31%;
     /* height: 55%; */
-    border-radius: 12px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 3;
     position: relative;
+    border: 4px solid #98614A;
 }
 
 form {
-    margin-top: 20%;
-    padding-bottom: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+}
+
+#enquiryForm h2{
+    color: #7E4B2C;
+}
+form p {
+    display: none;
+    color: red;
+    margin: 5px 0 0 5px;
+    font-family: "Caudex", serif;
+}
+
+/* Hide the arrows in input of type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* For Internet Explorer */
+input[type=number]::-ms-clear {
+    display: none;
+}
+
+/* For Edge */
+input[type=number]::-ms-reveal {
+    display: none;
+}
+
+.form_input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
 }
 
 form input {
     margin: 5px;
-    width: 80%;
+    width: 90%;
     padding: 10px;
-    border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid #98614A;
+    font-family: "Caudex", serif;
+    font-size: 16px;
 }
+
+form label{
+    font-size: 16px;
+    color: #98614A;
+    font-family: "Caudex", serif;
+    margin-left: 5px;
+}
+
+
 
 /* The Close Button */
 .close {
-    color: #aaa;
+    position: absolute;
+    color: #726f6f;
     float: right;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
+    top: 5%;
+    right: 5%;
 }
 
 .close:hover,
@@ -230,11 +256,25 @@ form input {
     cursor: pointer;
 }
 
+.submit_btn {
+    height: 50px;
+    width: 200px;
+    background-color: #98614A;
+    color: white;
+    font-size: 20px;
+    border: none;
+    font-family: 'caudex',sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit_btn:hover{
+    cursor: pointer;
+    background-color: black;
+}
 .enquire_button {
     text-align: center;
     margin-top: 20px;
 }
-
 .logo_image {
     height: 116px;
     width: 115px;
@@ -680,24 +720,6 @@ form input {
 
 .video {
     width: 90%;
-}
-
-.btn_group {
-    height: 60px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateY(-50%);
-}
-
-.submit_btn {
-    height: 50px;
-    width: 200px;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    border-radius: 15px;
 }
 
 #map.map-section {
@@ -1526,13 +1548,7 @@ nav ul li a img {
     .popup-content {
         background-color: #fefefe;
         margin: 50% auto;
-        padding: 17px;
         width: 78%;
-        /* height: 60vh; */
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        z-index: 3;
-        position: relative;
-        border-radius: 15px;
     }
 
     form input::placeholder {

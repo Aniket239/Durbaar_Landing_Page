@@ -407,6 +407,14 @@ document.addEventListener('DOMContentLoaded', function () {
         return phoneRegex.test(phoneNumber);
     }
 
+    document.getElementById('mobile').addEventListener('input', function () {
+        var validation = document.getElementById('validation');
+        const phone = document.getElementById('mobile');
+        validation.style.display = 'none';
+        phone.style.border = '2px solid black';
+    });
+    
+
     // Form submission event listener
     const form = document.getElementById('enquiryForm');
     form.addEventListener('submit', function (event) {
@@ -425,8 +433,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
 
 /*============================= typing effect =========================================== */
 document.addEventListener('DOMContentLoaded', () => {
