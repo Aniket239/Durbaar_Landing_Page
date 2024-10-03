@@ -1261,7 +1261,7 @@ nav ul li a img {
     }
 
     #home {
-        height: 90vh;
+        height: 88vh;
     }
 
     .main_div {
@@ -1286,7 +1286,7 @@ nav ul li a img {
         align-items: center;
         justify-content: center;
         position: fixed;
-        margin-top: 184%;
+        margin-top: 180%;
         right: 15px;
         z-index: 10;
         height: 55px;
@@ -1620,7 +1620,7 @@ nav ul li a img {
     }
 
     .side_icon {
-        margin-top: 145%;
+        margin-top: 140%;
     }
 
     .side-nav-whatsapp-icon {
