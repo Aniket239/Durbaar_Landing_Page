@@ -459,7 +459,7 @@ form input {
 }
 
 .amenities-headings p {
-    font-size: 1.5em;
+    font-size: 20px;
     color: #777;
     font-family: "Caudex", serif;
 }
@@ -481,14 +481,14 @@ form input {
 }
 
 .amenity-text h2 {
-    font-size: 1.5em;
+    font-size: 23px;
     margin-bottom: 5px;
     color: #333;
     font-family: "Caudex", serif;
 }
 
 .amenity-text p {
-    font-size: 1.2em;
+    font-size: 20px;
     color: #555;
     line-height: 1.5;
 }
@@ -599,7 +599,7 @@ form input {
 
   .jsNextIcon, .jsPrevIcon{
     font-size: 55px !important;
-    color: #000;
+    color: #98614A;
   }
 
   .jsNextIcon{
@@ -726,7 +726,7 @@ form input {
 
 
 footer#contact_us {
-    background-color: #001741;
+    background-color: #461d0b;
     color: #ffffff;
     padding: 20px;
     display: flex;
@@ -768,15 +768,15 @@ footer#contact_us .contact-info .info-item {
 }
 
 footer#contact_us .contact-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 3px;
     color: #ffffff;
     font-family: "Cinzel", serif;
 }
 
 footer#contact_us .contact-info p,
 footer#contact_us .contact-info a {
-    font-size: 1.2rem;
+    font-size: 17px;
     color: #dddddd;
     text-decoration: none;
     line-height: 25px;
@@ -929,28 +929,28 @@ nav ul li a img {
 
 .side_nav_button-75 {
     align-items: center;
-    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    background-color: #98614A;
     border: 0;
     box-sizing: border-box;
-    color: #fff;
+    color: #FFF2E0;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    font-family: "Caudex", serif;
+    font-family: "cinzel", serif;
     font-size: 20px;
     font-weight: 700;
     height: 54px;
     justify-content: center;
     letter-spacing: .4px;
     line-height: 1;
-    width: 200px;
+    width: 215px;
     padding: 0 20px 0 20px;
     text-decoration: none;
     text-transform: uppercase;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin: 30px 0 0 -17px;
+    margin: 30px 0 0 -23px;
     transform: rotate(90deg) translateY(62px) translatex(28px);
 }
 
@@ -1226,7 +1226,7 @@ nav ul li a img {
         display: flex;
         position: fixed;
         bottom: 0;
-        background-color: rgb(0, 24, 56);
+        background-color: #98614A;
         width: 100%;
         height: 60px;
         z-index: 100;
@@ -1237,14 +1237,14 @@ nav ul li a img {
 
     .bottom_nav_button-75 {
         align-items: center;
-        background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+        background-color: #FFF2E0;
         border: 0;
         box-sizing: border-box;
-        color: #fff;
+        color: #98614A;
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        font-family: "Caudex", serif;
+        font-family: "cinzel", serif;
         font-size: 19px;
         font-weight: 700;
         height: 60px;
@@ -1258,6 +1258,7 @@ nav ul li a img {
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
+        border: 2px solid #98614A;
     }
 
     #home {
@@ -1290,7 +1291,7 @@ nav ul li a img {
         z-index: 10;
         height: 55px;
         width: 55px;
-        background-color: lawngreen;
+        background-color: #98614A;
         border-radius: 50%;
         bottom: 75px;
     }
@@ -1303,12 +1304,12 @@ nav ul li a img {
         margin-top: 5px;
         font-variation-settings:
             'FILL' 0,
-            'wght' 600,
+            'wght' 300,
             'GRAD' 200,
             'opsz' 48;
         /* Match this with font-size */
-        color: black;
-        font-size: 34px !important;
+        color: rgb(255, 255, 255);
+        font-size: 36px !important;
     }
 
 
@@ -1321,7 +1322,7 @@ nav ul li a img {
     }
 
     .why_choose_text p {
-        font-size: 20px;
+        font-size: 18px;
         padding: 0 3%;
         text-align: center;
     }
@@ -1336,7 +1337,7 @@ nav ul li a img {
     }
 
     .heading {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .checkbox {
@@ -1424,11 +1425,11 @@ nav ul li a img {
     }
 
     .content h2 {
-        font-size: 1.7em;
+        font-size: 24px;
     }
 
     .content p {
-        font-size: 1.5em;
+        font-size: 20px;
         line-height: 35px;
     }
 
@@ -1648,7 +1649,7 @@ nav ul li a img {
     }
 
     .heading {
-        font-size: 23px;
+        font-size: 20px;
     }
 
     .bottom_nav_button-75 {
