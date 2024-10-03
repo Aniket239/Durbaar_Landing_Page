@@ -268,13 +268,16 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const video = document.getElementById('bannerVideo');
     const muteToggle = document.getElementById('muteToggle');
+    const mute_button = document.getElementById('mute_button');
 
     // Function to update the button icon based on mute state
     function updateButton() {
         if (video.muted) {
-            muteToggle.textContent = '🔇'; // Muted icon
+            // muteToggle.textContent = '🔇'; // Muted icon
+            mute_button.textContent = 'volume_off'
         } else {
-            muteToggle.textContent = '🔊'; // Unmuted icon
+            // muteToggle.textContent = '🔊'; // Unmuted icon
+            mute_button.textContent = 'volume_up'
         }
     }
 
