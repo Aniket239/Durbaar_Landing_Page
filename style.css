@@ -1286,13 +1286,13 @@ nav ul li a img {
         align-items: center;
         justify-content: center;
         position: fixed;
-        margin-top: 180%;
         right: 15px;
         z-index: 10;
         height: 55px;
         width: 55px;
         background-color: lawngreen;
         border-radius: 50%;
+        bottom: 75px;
     }
 
     .phone_icon {
@@ -1622,9 +1622,6 @@ nav ul li a img {
         left: -8px;
     }
 
-    .side_icon {
-        margin-top: 140%;
-    }
 
     .side-nav-whatsapp-icon {
         height: 35px;
