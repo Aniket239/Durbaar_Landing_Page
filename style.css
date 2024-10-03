@@ -58,7 +58,7 @@ body {
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     /* Ensures the video covers the container without distortion */
     transform: translate(-50%, -50%);
     /* Centers the video */
@@ -572,7 +572,7 @@ form input {
     --color-default-state: #ddd;
     --color-active-state: #14005a;
     position: relative;
-    width: 80vw;
+    width: 65vw;
     height: 80vmin;
   }
   
@@ -648,8 +648,24 @@ form input {
     top: 50%;
     background-color: transparent;
     transform: translateY(-50%);
+    background-color: #fff2e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
+
+  .jsNextIcon, .jsPrevIcon{
+    font-size: 55px !important;
+    color: #000;
+  }
+
+  .jsNextIcon{
+    transform: rotate(-90deg);
+  }
+  .jsPrevIcon{
+    transform: rotate(90deg);
+  }
   .carousel_btn:focus,
   .carousel_dot:focus,
   .carousel_btn:active,
@@ -672,11 +688,11 @@ form input {
   }
   
   .jsPrev {
-    left: 10px;
+    left: -22px;
   }
   
   .jsNext {
-    right: 10px;
+    right: -22px;
   }
   
   .jsPrev svg {
@@ -699,8 +715,8 @@ form input {
   }
   
   .carousel_dot {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background-color: var(--color-default-state);
     transition: background-color .2s;
@@ -1341,7 +1357,7 @@ nav ul li a img {
         display: block;
     }
 
-    .material-symbols-outlined {
+    .side-nav-call {
         margin-top: 5px;
         font-variation-settings:
             'FILL' 0,
@@ -1489,6 +1505,15 @@ nav ul li a img {
         flex: auto;
     }
 
+    .carousel {
+        width: 87vw;
+        height: 58vmin;
+    }
+
+    .jsNextIcon, .jsPrevIcon{
+        font-size: 45px !important;
+    }
+
     .video iframe {
         height: 25vh;
     }
@@ -1590,7 +1615,7 @@ nav ul li a img {
     }
 
     .video_container {
-        margin-top: 60px;
+        margin-top: 20px;
     }
 
     footer#contact_us {
