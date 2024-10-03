@@ -1442,35 +1442,35 @@ nav ul li a img {
     /* Individual background images */
     #parallax1 {
         margin-top: 10px;
-        background-image: url('assets/services Images/Services mobile/wedding.jpg');
+        background-image: url('assets/services Images/Services mobile/wedding.webp');
     }
 
     #parallax2 {
-        background-image: url('assets/services Images/Services mobile/Event\ hosting.jpg');
+        background-image: url('assets/services Images/Services mobile/Event\ hosting.webp');
     }
 
     #parallax3 {
-        background-image: url('assets/services Images/Services mobile/Corporate\ events.jpg');
+        background-image: url('assets/services Images/Services mobile/Corporate\ events.webp');
     }
 
     #parallax4 {
-        background-image: url('assets/services Images/Services mobile/Catering\ service.jpg');
+        background-image: url('assets/services Images/Services mobile/Catering\ service.webp');
     }
 
     #parallax5 {
-        background-image: url('assets/services Images/Services mobile/All\ in\ one\ decor\ package.jpg');
+        background-image: url('assets/services Images/Services mobile/All\ in\ one\ decor\ package.webp');
     }
 
     #parallax6 {
-        background-image: url('assets/services Images/Services mobile/Event\ Planning.jpg');
+        background-image: url('assets/services Images/Services mobile/Event\ Planning.webp');
     }
 
     #parallax7 {
-        background-image: url('assets/services Images/Services mobile/Professional\ photo\ and\ video\ team.jpg');
+        background-image: url('assets/services Images/Services mobile/Professional\ photo\ and\ video\ team.webp');
     }
 
     #parallax8 {
-        background-image: url('assets/services Images/Services mobile/dj\ and\ live\ music.jpg');
+        background-image: url('assets/services Images/Services mobile/dj\ and\ live\ music.webp');
     }
 
     .content {
