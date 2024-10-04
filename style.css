@@ -56,14 +56,19 @@ body {
     height: 100vh; /* Full viewport height */
     overflow: hidden;
 }
+.portrait_banner{
+    display: none;
+}
 
+.landscape_banner{
+    display: block;
+}
 /* Image styling */
 .banner_image {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+    top: 40%;
+    left: 49%;
+    width: 102%;
     object-fit: fill;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -1309,10 +1314,17 @@ nav ul li a img {
         border: 2px solid #98614A;
     }
 
+    .portrait_banner{
+        display: block;
+    }
+    
+    .landscape_banner{
+        display: none;
+    }
+
     .banner_image{
-        left: 41%;
-        width: 117%;
-        object-fit: cover;
+        top: 50%;
+        left: 49%;
     }
 
     #home {
