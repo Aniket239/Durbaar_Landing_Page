@@ -741,7 +741,8 @@ form label{
   }
   
   .carousel_dot.is-selected {
-    background-color: var(--color-active-state);
+    background-color: #98614A;
+    border: 1px solid white;
   }
   
 .video_container {
