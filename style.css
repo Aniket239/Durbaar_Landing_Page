@@ -451,11 +451,11 @@ form label{
 }
 
 #parallax2 {
-    background-image: url('assets/services Images/services\ desktop/Event\ hosting.webp');
+    background-image: url('assets/services Images/services desktop/Corporate\ events.webp');
 }
 
 #parallax3 {
-    background-image: url('assets/services Images/services\ desktop/Corporate\ events.webp');
+    background-image: url('assets/services Images/services desktop/Corporate\ event.webp');
 }
 
 #parallax4 {
@@ -471,7 +471,7 @@ form label{
 }
 
 #parallax7 {
-    background-image: url('assets/services Images/services\ desktop/Professional\ photo\ and\ video\ team.webp');
+    background-image: url('assets/services Images/services desktop/Add\ a\ heading\ \(1\).webp');
 }
 
 #parallax8 {
@@ -1468,7 +1468,7 @@ nav ul li a img {
     }
 
     #parallax3 {
-        background-image: url('assets/services Images/Services mobile/Corporate\ events.webp');
+        background-image: url('assets/services Images/Services mobile/corporate\ event.webp');
     }
 
     #parallax4 {
@@ -1484,7 +1484,7 @@ nav ul li a img {
     }
 
     #parallax7 {
-        background-image: url('assets/services Images/Services mobile/Professional\ photo\ and\ video\ team.webp');
+        background-image: url('assets/services Images/Services mobile/photo\ and\ video.webp');
     }
 
     #parallax8 {
@@ -1492,7 +1492,7 @@ nav ul li a img {
     }
 
     .content {
-        padding: 40px 20px;
+        padding: 20px;
     }
 
     .content h2 {
@@ -1500,7 +1500,7 @@ nav ul li a img {
     }
 
     .content p {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 35px;
     }
 
