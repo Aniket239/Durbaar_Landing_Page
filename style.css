@@ -378,7 +378,7 @@ form label{
     font-size: 24px;
     color: #31403F;
     font-family: "Barlow", sans-serif;
-    line-height: 35px;
+    line-height: 25px;
     padding: 0 5%;
     text-align: left;
 }
@@ -1464,7 +1464,7 @@ nav ul li a img {
     }
 
     #parallax2 {
-        background-image: url('assets/services Images/Services mobile/Event\ hosting.webp');
+        background-image: url('assets/services Images/Services mobile/event\ hosting.webp');
     }
 
     #parallax3 {
@@ -1480,7 +1480,7 @@ nav ul li a img {
     }
 
     #parallax6 {
-        background-image: url('assets/services Images/Services mobile/Event\ Planning.webp');
+        background-image: url('assets/services Images/Services mobile/event\ planing.webp');
     }
 
     #parallax7 {
@@ -1738,7 +1738,6 @@ nav ul li a img {
 
     .why_choose_text p {
         font-size: 15px;
-        line-height: 30px;
     }
 
     .facilities {
