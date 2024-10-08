@@ -434,42 +434,52 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', () => {
     // Function to split text into words and spaces, then wrap words in spans
     function wrapWords(element) {
-        const text = element.textContent;
-        const wordsAndSpaces = text.split(/(\s+)/); // Split and keep the spaces
-
-        element.innerHTML = ''; // Clear existing text
-
-        wordsAndSpaces.forEach((part) => {
-            if (/\s+/.test(part)) {
-                // If the part is whitespace, add it as a text node
-                element.appendChild(document.createTextNode(part));
-            } else {
-                // If the part is a word, wrap it in a span
-                const span = document.createElement('span');
-                span.textContent = part;
-                span.classList.add('word'); // Add a class for styling if needed
-                span.style.opacity = '0'; // Initially hide the word
-                span.style.display = 'inline-block'; // Ensure proper spacing
-                span.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                span.style.transform = 'translateY(20px)'; // Initial position
-
-                // Append the span to the element
-                element.appendChild(span);
+        // Function to process each node
+        function processNode(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.textContent;
+                const wordsAndSpaces = text.split(/(\s+)/); // Split and keep the spaces
+                
+                const fragment = document.createDocumentFragment();
+                
+                wordsAndSpaces.forEach(part => {
+                    if (/\s+/.test(part)) {
+                        // If the part is whitespace, add it as a text node
+                        fragment.appendChild(document.createTextNode(part));
+                    } else {
+                        // If the part is a word, wrap it in a span
+                        const span = document.createElement('span');
+                        span.textContent = part;
+                        span.classList.add('word'); // Add a class for styling if needed
+                        fragment.appendChild(span);
+                    }
+                });
+                
+                // Replace the original text node with the new fragment
+                node.parentNode.replaceChild(fragment, node);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                // Recursively process child nodes
+                Array.from(node.childNodes).forEach(child => processNode(child));
             }
-        });
+        }
+        
+        // Start processing from the root element
+        Array.from(element.childNodes).forEach(child => processNode(child));
     }
+
 
     // Function to animate words with a staggered delay
     function animateWords(element) {
-        const spans = element.querySelectorAll('span.word');
-        spans.forEach((span, index) => {
-            // Use setTimeout to stagger the animation
+        const words = element.querySelectorAll('.word');
+        words.forEach((word, index) => {
             setTimeout(() => {
-                span.style.opacity = '1';
-                span.style.transform = 'translateY(0)';
-            }, index * 100); // 100ms delay between each word
+                word.classList.add('visible');
+            }, index * 100); // Adjust the delay as needed
         });
     }
+    
+    
+    
 
     // Select the text elements
     const welcomeText = document.getElementById('welcome-text');

@@ -154,10 +154,6 @@ body {
     display: none;
 }
 
-#location_inn{
-    font-weight: bold;
-    display: inline;
-}
 
 
 
@@ -386,6 +382,33 @@ form label{
     line-height: 25px;
     padding: 0 5%;
     text-align: left;
+}
+
+.bold-text {
+    font-weight: 700; /* Makes the text bold */
+}
+.bold-text.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Original position */
+}
+/* Word Animation */
+.word {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: inline-block; /* Ensures proper spacing */
+}
+.word.bold-text {
+    font-weight: 700; /* Ensures the text is bold */
+}
+
+strong {
+    font-weight: bold; /* This is usually default, but you can customize it */
+}
+
+.word.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .services-container {
