@@ -430,6 +430,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
 /*============================= typing effect =========================================== */
 document.addEventListener('DOMContentLoaded', () => {
     // Function to split text into words and spaces, then wrap words in spans
