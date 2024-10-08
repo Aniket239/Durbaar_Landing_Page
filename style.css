@@ -153,6 +153,10 @@ body {
 .bottom_nav_button-75 {
     display: none;
 }
+#location_inn{
+    font-weight: bold;
+    display: inline;
+}
 
 
 
