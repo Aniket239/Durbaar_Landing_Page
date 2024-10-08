@@ -406,6 +406,7 @@ strong {
     font-weight: bold; /* This is usually default, but you can customize it */
 }
 
+
 .word.visible {
     opacity: 1;
     transform: translateY(0);
