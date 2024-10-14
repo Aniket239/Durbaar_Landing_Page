@@ -32,15 +32,15 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
     border-left: 1px solid black;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: #7E4B2C;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: black;
-  }
+}
 
 .heading {
     font-family: "Cinzel", serif;
@@ -53,16 +53,19 @@ body {
 #home {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
+    /* Full viewport height */
     overflow: hidden;
 }
-.portrait_banner{
+
+.portrait_banner {
     display: none;
 }
 
-.landscape_banner{
+.landscape_banner {
     display: block;
 }
+
 /* Image styling */
 .banner_image {
     position: absolute;
@@ -83,7 +86,8 @@ body {
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Changed from 'fill' to 'cover' for better aspect ratio */
+    object-fit: cover;
+    /* Changed from 'fill' to 'cover' for better aspect ratio */
     transform: translate(-50%, -50%);
     z-index: 0;
     opacity: 0;
@@ -111,9 +115,12 @@ body {
 /* Style the Mute/Unmute button */
 .mute-button {
     position: absolute;
-    bottom: 20px; /* Adjust as needed */
-    right: 20px;  /* Adjust as needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    bottom: 20px;
+    /* Adjust as needed */
+    right: 20px;
+    /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
     border: none;
     color: white;
     height: 50px;
@@ -212,9 +219,10 @@ form {
     width: 100%;
 }
 
-#enquiryForm h2{
+#enquiryForm h2 {
     color: #522b13;
 }
+
 form p {
     display: none;
     color: red;
@@ -244,7 +252,7 @@ input[type=number]::-ms-reveal {
     display: none;
 }
 
-.form_input{
+.form_input {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -261,7 +269,7 @@ form input {
     font-size: 16px;
 }
 
-form label{
+form label {
     font-size: 16px;
     color: #98614A;
     font-family: "Caudex", serif;
@@ -295,18 +303,20 @@ form label{
     color: white;
     font-size: 20px;
     border: none;
-    font-family: 'caudex',sans-serif;
+    font-family: 'caudex', sans-serif;
     transition: all 0.3s ease-in-out;
 }
 
-.submit_btn:hover{
+.submit_btn:hover {
     cursor: pointer;
     background-color: black;
 }
+
 .enquire_button {
     text-align: center;
     margin-top: 20px;
 }
+
 .logo_image {
     height: 116px;
     width: 115px;
@@ -318,7 +328,7 @@ form label{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5% 0 0 5%;
+    margin: 5% 0 0 0;
 }
 
 .why_choose_text {
@@ -385,25 +395,34 @@ form label{
 }
 
 .bold-text {
-    font-weight: 700; /* Makes the text bold */
+    font-weight: 700;
+    /* Makes the text bold */
 }
+
 .bold-text.visible {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Original position */
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Original position */
 }
+
 /* Word Animation */
 .word {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    display: inline-block; /* Ensures proper spacing */
+    display: inline-block;
+    /* Ensures proper spacing */
 }
+
 .word.bold-text {
-    font-weight: 700; /* Ensures the text is bold */
+    font-weight: 700;
+    /* Ensures the text is bold */
 }
 
 strong {
-    font-weight: bold; /* This is usually default, but you can customize it */
+    font-weight: bold;
+    /* This is usually default, but you can customize it */
 }
 
 
@@ -609,33 +628,33 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .carousel {
+}
+
+.carousel {
     --color-default-state: #ddd;
     --color-active-state: #14005a;
     position: relative;
     width: 65vw;
     height: 80vmin;
-  }
-  
-  .carousel_track-container {
+}
+
+.carousel_track-container {
     overflow: hidden;
     width: 100%;
     height: 100%;
-  }
-  
-  .carousel_track {
+}
+
+.carousel_track {
     position: relative;
     width: inherit;
     height: inherit;
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  
-  .carousel_slide,
-  .carousel_image {
+}
+
+.carousel_slide,
+.carousel_image {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -643,50 +662,50 @@ strong {
     right: 0;
     margin: 0;
     padding: 0;
-  }
-  
-  .carousel_slide {
+}
+
+.carousel_slide {
     padding: 5% 12% 8%;
     text-align: center;
     transform: translateX(-100%);
     transition: transform .3s ease-out;
-  }
-  
-  .carousel_slide.is-selected {
+}
+
+.carousel_slide.is-selected {
     transform: translateX(0);
-  }
-  
-  .carousel_slide.is-selected ~ .carousel_slide {
+}
+
+.carousel_slide.is-selected~.carousel_slide {
     transform: translateX(100%);
-  }
-  
-  .carousel_image {
+}
+
+.carousel_image {
     z-index: -1;
-  }
-  
-  .carousel_image > img {
+}
+
+.carousel_image>img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     border: none;
-  }
-  
-  .carousel_title {
+}
+
+.carousel_title {
     font-size: 40px;
     color: #fff;
-  }
-  
-  .carousel_btn,
-  .carousel_dot {
+}
+
+.carousel_btn,
+.carousel_dot {
     z-index: 1;
     padding: 0;
     cursor: pointer;
     border: none;
-  }
-  
-  .carousel_btn {
+}
+
+.carousel_btn {
     position: absolute;
     top: 50%;
     background-color: transparent;
@@ -696,57 +715,60 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .jsNextIcon, .jsPrevIcon{
+.jsNextIcon,
+.jsPrevIcon {
     font-size: 55px !important;
     color: #98614A;
-  }
+}
 
-  .jsNextIcon{
+.jsNextIcon {
     transform: rotate(-90deg);
-  }
-  .jsPrevIcon{
+}
+
+.jsPrevIcon {
     transform: rotate(90deg);
-  }
-  .carousel_btn:focus,
-  .carousel_dot:focus,
-  .carousel_btn:active,
-  .carousel_dot:active {
+}
+
+.carousel_btn:focus,
+.carousel_dot:focus,
+.carousel_btn:active,
+.carousel_dot:active {
     outline: none;
-  }
-  
-  .carousel_btn > * {
+}
+
+.carousel_btn>* {
     pointer-events: none;
-  }
-  
-  .carousel_btn svg {
+}
+
+.carousel_btn svg {
     fill: var(--color-default-state);
     transform-origin: center;
     transition: fill .2s;
-  }
-  
-  .carousel_btn:hover svg {
+}
+
+.carousel_btn:hover svg {
     fill: var(--color-active-state);
-  }
-  
-  .jsPrev {
+}
+
+.jsPrev {
     left: -22px;
-  }
-  
-  .jsNext {
+}
+
+.jsNext {
     right: -22px;
-  }
-  
-  .jsPrev svg {
+}
+
+.jsPrev svg {
     transform: rotate(-90deg);
-  }
-  
-  .jsNext svg {
+}
+
+.jsNext svg {
     transform: rotate(90deg);
-  }
-  
-  .carousel_nav {
+}
+
+.carousel_nav {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -755,25 +777,25 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .carousel_dot {
+}
+
+.carousel_dot {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     background-color: var(--color-default-state);
     transition: background-color .2s;
-  }
-  
-  .carousel_dot + .carousel_dot {
+}
+
+.carousel_dot+.carousel_dot {
     margin-left: 20px;
-  }
-  
-  .carousel_dot.is-selected {
+}
+
+.carousel_dot.is-selected {
     background-color: #98614A;
     border: 1px solid white;
-  }
-  
+}
+
 .video_container {
     margin-top: 50px;
     display: grid;
@@ -892,6 +914,24 @@ footer#contact_us .social-icons a img {
 footer#contact_us .social-icons a img:hover {
     transform: scale(1.1);
     opacity: 0.8;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.info-item-mobile,
+.info-item-mail {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.info-item-mobile {
+    margin-bottom: 10px;
 }
 
 .bottom-call {
@@ -1345,15 +1385,15 @@ nav ul li a img {
         border: 2px solid #98614A;
     }
 
-    .portrait_banner{
+    .portrait_banner {
         display: block;
     }
-    
-    .landscape_banner{
+
+    .landscape_banner {
         display: none;
     }
 
-    .banner_image{
+    .banner_image {
         object-fit: cover;
         width: 120%;
         transform: none;
@@ -1554,7 +1594,8 @@ nav ul li a img {
         height: 58vmin;
     }
 
-    .jsNextIcon, .jsPrevIcon{
+    .jsNextIcon,
+    .jsPrevIcon {
         font-size: 45px !important;
     }
 
@@ -1659,7 +1700,8 @@ nav ul li a img {
     }
 
     footer#contact_us {
-        margin: 0 0 45px;
+        margin: 0 0 59px;
+        padding: 20px 20px 30px 20px;
     }
 
     footer#contact_us .footer-section {
@@ -1676,6 +1718,7 @@ nav ul li a img {
         align-items: center;
     }
 
+
     .bottom-call {
         color: white;
         font-size: 24px !important;
@@ -1685,18 +1728,19 @@ nav ul li a img {
 
 
 @media only screen and (max-width: 380px) {
-    #home{
+    #home {
         height: 85vh;
     }
 
-    .banner_image{
+    .banner_image {
         top: 0%;
         left: -1%;
         object-fit: cover;
         width: 102%;
-        transform:none;
+        transform: none;
         height: 100vh;
     }
+
     nav ul li a img {
         margin-top: 8%;
         width: 115px;

@@ -479,9 +479,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    
-    
-
     // Select the text elements
     const welcomeText = document.getElementById('welcome-text');
     const whyChooseText = document.getElementById('why-choose-text');
