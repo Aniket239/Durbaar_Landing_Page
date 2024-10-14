@@ -1,0 +1,823 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Playwrite+AU+SA:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+/* button css start */
+.durbaar_word{
+    font-size: 16px;
+    font-weight: bold;
+}
+.extra_font{
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+}
+.button-75 {
+    align-items: center;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: "Codec cold",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 54px;
+    justify-content: center;
+    letter-spacing: .4px;
+    line-height: 1;
+    max-width: 100%;
+    padding: 0 20px 2px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 30px;
+  }
+  
+  .button-75:active {
+    outline: 0;
+  }
+  
+  .button-75:hover {
+    outline: 0;
+  }
+  
+  .button-75 span {
+    transition: all 200ms;
+  }
+  
+  .button-75:hover span {
+    transform: scale(.9);
+    opacity: .75;
+  }
+  
+  /* CSS */
+  .button-12 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 45px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border: none;
+    background-color: transparent;
+    margin-top: 90px;
+    cursor: pointer;
+  }
+
+  .menu_tag{
+    color: white;
+    text-decoration: none;
+}
+
+.menu_tag.scrolled{
+    color: black;
+}
+
+.bottom_nav{
+    display: none;
+}
+.bottom_nav_button-75{
+    display: none;
+}
+
+.side_enquiry_button{
+    display: none;
+}
+
+form p{
+    display: none;
+    color: red;
+    margin-top: 5px;
+}
+  
+/* Hide the arrows in input of type number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* For Internet Explorer */
+input[type=number]::-ms-clear {
+    display: none;
+}
+
+/* For Edge */
+input[type=number]::-ms-reveal {
+    display: none;
+}
+/* .button-12:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+  } */
+/* ====================================================== desktop styles ====================================*/
+
+
+.banner{
+    height: 100vh;
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: black;
+}
+.logo_image{
+    height: 70px;
+    width: 70px;
+    margin-left: 7%;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.headline{
+    padding-top:35vh;
+    text-align: left;
+    margin-left: 8%;
+    color: white;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px  1px 0 #000,
+        1px  1px 0 #000;
+    font-family: "Playwrite AU SA", cursive;
+    font-optical-sizing: auto;
+}
+.enquire_button{
+    margin-top: 2%;
+    margin-left: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.why_choose{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    
+}
+.why_choose_text{
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.facilities{
+    width: 80vw;
+}
+
+.facilities ul{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.checkbox{
+    background: url(./assets/checkbox.gif);
+    height: 27px;
+    width: 27px;
+    background-size: 100%;
+    margin-right: 5px;
+}
+
+.facilities ul p{
+    margin: 0;
+}
+
+.why_choose_text p{
+    margin-top: 2%;
+    line-height: 25px;
+    width: 82vw;
+    margin-bottom: 5%;
+}
+#gallary{
+    margin-top: 5%;
+}
+#gallary h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video_container{
+    margin-top: 50px;
+    display: grid;
+    place-items: center;
+}
+
+.video{
+    width: 70%;
+}
+
+.btn_group{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateY(-50%);
+    }
+
+.submit_btn {
+    height: 50px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+#map{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map iframe{
+    width: 90%;
+    height: 70vh;
+}
+
+.contact .address{
+    margin-top: 5%;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(0, 24, 56);
+    width: 100%;
+    color: white;
+}
+
+footer{
+    margin-top: 10vh;
+}
+
+/* =============================desktop with more than 1024 width========================*/
+@media only screen and (min-width: 1024px){
+    .navbar {
+        height: 7%;
+        width: 99%;
+        top: 0;
+        background-color: transparent;
+        position: fixed;
+        z-index: 10;
+        transition: all 0.3s;
+    }
+
+    #menu{
+        a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px;
+        }
+    }
+
+    .button_nav{
+        display: none;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+    .side_icon {
+        display: block;
+        position: fixed;
+        margin-top: 200px;
+        right: 0px;
+        z-index: 10;
+        height: 50px;
+        width: 49px;
+        background-color: transparent;
+        border-radius: 10px 0 0 10px;
+        transition: all 0.3s;
+    }
+    
+    .side_enquiry_button{
+        display: block;
+    }
+
+    .side_nav_button-75{
+        align-items: center;
+        background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+        border: 0;
+        border-radius: 10px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        font-family: "Codec cold",sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        height: 54px;
+        justify-content: center;
+        letter-spacing: .4px;
+        line-height: 1;
+        width: 345%;
+        padding: 0 20px 0 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin-top: 30px;
+        transform: rotate(90deg) translateY(62px) translatex(28px);
+    }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-right: 5%;
+    }
+    .banner{
+        background-image: url(./assets/desktop_hero_image_new.webp);
+    }
+    .slider{
+        position: static;
+    }
+    .main_div{
+        width: 60%;
+        height: 70vh;
+        box-shadow: 0px 0px 1px grey;
+        margin: auto;
+        margin-top: 30px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    .slide{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: 1s;
+    }
+    #contact_us{
+        /* border: 1px solid red; */
+        flex-direction: column;
+    }
+    .enquire_button{
+        margin-top: 5vh;
+    }
+    .phone_icon{
+        display: none;
+    }
+    .video{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }
+    .video iframe{
+        width: 99vw;
+        height: 70vh;
+        border-radius: 10px;
+    }
+
+
+    .address a{
+        text-decoration: none;
+        color: white;
+    }
+    
+}
+
+
+
+/* ====================================================== tab styles ====================================*/
+
+@media screen and (max-width: 991px) {
+  .button-75 {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .button-75 span {
+    line-height: 50px;
+  }
+}
+/* button css end */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 10px;
+}
+
+/* .banner {
+    position: relative;
+} */
+
+
+.video_carousel{
+    height: 50vh;
+    width: 100%;
+}
+
+.testimonial_carousel{
+    height: 50vh;
+    width: 100%;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* height: 50vh; */
+    height: 147%;
+    width: 100%;
+}
+
+footer{
+    height: 40vh;
+}
+
+
+/* popup form css */
+/* Styles for the popup background */
+.popup {
+    display: none; 
+    position: fixed; 
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #fefefe;
+    margin: 8% auto;
+    padding: 2% 2% 7%;
+    width: 31%;
+    /* height: 55%; */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 3;
+    position: relative;
+}
+form{
+    margin-top: 20%;
+    padding-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form input{
+    margin: 5px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.enquire_button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo_image {
+    height: 116px;
+    width: 115px;
+    margin-top: 5px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* ====================================================== Mobile styles ====================================*/
+@media only screen and (max-width: 768px) {
+    .navbar {
+        height: 7%;
+        width: 96%;
+        top: 0;
+        background-color: transparent;
+        position: fixed;
+        z-index: 10;
+        transition: all 0.3s;
+    }
+
+    .bottom_nav{
+        display: none;
+        position: fixed;
+        bottom:0;
+        background-color: rgb(0, 24, 56);
+        width: 90%;
+        height: 30px;
+        padding: 5%;
+        z-index: 100;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+
+    .bottom_nav_button-75{
+        align-items: center;
+        background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+        border: 0;
+        border-radius: 10px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        font-family: "Codec cold",sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        height: 54px;
+        justify-content: center;
+        letter-spacing: .4px;
+        line-height: 1;
+        max-width: 100%;
+        padding: 2px 20px 0 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .main_div{
+        width: 90%;
+        height: 223px;
+        box-shadow: 0px 0px 1px grey;
+        margin: auto;
+        margin-top: 30px;
+        /* border: 1px solid red; */
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    
+    .menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .menu.open {
+        display: flex;
+        color: white;
+        background-color: rgb(0, 24, 56);        
+        height: 40vh;
+        margin-top: 5%;
+    }
+
+    
+
+    .hamburger {
+        margin-right: 3%;
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .navbar.scrolled .logo_image {
+        filter: none; /* Removes any color filter, make sure your logo image works well with this */
+    }
+    
+    .navbar.scrolled .hamburger {
+        color: black; /* Changes the color of the hamburger icon */
+    }
+    
+    /* Ensure the initial color of the hamburger icon is white for the transparent background */
+    .hamburger {
+        color: white;
+    }
+
+    .banner{
+        background-image: url(./assets/banner_new.jpeg);
+
+    }
+    .headline{
+        margin: 0;
+        padding-top:30%;
+        text-align: center;
+        color: white;
+        font-optical-sizing: auto;
+        font-size: 16px;
+    }
+
+
+    .side_icon {
+        display: block;
+        position: fixed;
+        margin-top: 82%;
+        right: 0px;
+        z-index: 10;
+        height: 50px;
+        width: 49px;
+        background-color: white;
+        border-radius: 10px 0 0 10px;
+    }
+    
+    .phone_icon img{
+        background-color: white;
+        border-radius: 15px;
+        padding: 3px;
+    }
+
+    .side_enquiry_button{
+        display: none;
+    }
+
+    .side_nav_button-75{
+        display: none;
+    }
+
+
+    .facilities ul{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        align-items: flex-start;
+    }
+    .extra_font {
+        font-family: "Montserrat", sans-serif;
+        font-size: 19px;
+        font-weight: bold;
+    }
+
+    .checkbox{
+        width: 30px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        height: 50vh;
+
+    }
+    .contact #map{
+        width: 100vw;
+        height: 50vh;
+        margin-top: 72%;
+        text-align: center;
+        margin-bottom: 20px;
+
+    }
+    .map{
+        height: 40vh;
+    }
+    .map h2{
+        text-align: center;
+    }
+    iframe{
+        width: 100vw;
+        height: 40vh;
+        
+    }
+    .contact .address{
+        margin-top: 0%;
+        margin-bottom: 10%;
+        padding-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: rgb(0, 24, 56);
+        width: 100%;
+        color: white;
+    }
+     .extra_font{
+        font-size: 16px;
+    }
+
+    .address a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .address div{
+        padding: 0 10%;
+    }
+
+    .popup-content {
+        background-color: #fefefe;
+        margin: 45% auto;
+        padding: 17px;
+        width: 78%;
+        /* height: 60vh; */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        z-index: 3;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    form input::placeholder {
+        color: rgb(0, 0, 0);
+        font-size: 14px; /* Adjust font size */
+    }
+    .enquire_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0 0 0;
+    }
+    .slider{
+        position: static;
+    }
+
+    .slide{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: 1s;
+    }
+    .video_container{
+        margin-top: 60px;
+        display: block;
+    }
+    /* slider css end */
+}

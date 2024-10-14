@@ -17,6 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
         // Fade out the image and fade in the video
         bannerImage.style.opacity = '0';
         video.classList.add('playing');
+        if (bannerImage.style.opacity == '0') {
+            setTimeout(function () {
+                // Select the welcome section
+                var welcomeSection = document.getElementById('welcome');
+                console.log('====================================');
+                console.log(window.scrollY);
+                console.log('====================================');
+                if (welcomeSection && window.scrollY < 150) {
+                    // Calculate the position to scroll to, subtracting the offset (70px)
+                    var offset = 85; // Offset in pixels
+                    var elementPosition = welcomeSection.getBoundingClientRect().top + window.pageYOffset;
+                    var offsetPosition = elementPosition - offset;
+
+                    // Scroll to the calculated position smoothly
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    console.warn('Element with id "welcome" not found.');
+                }
+            }, 31000); // 30000 milliseconds = 30 seconds
+        }
     };
 
     const handleVideoCanPlay = () => {
@@ -63,30 +86,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*===================================== scroll after video ends ================================================== */
-document.addEventListener('DOMContentLoaded', function () {
-    // Set a timeout for 30 seconds (30000 milliseconds)
-        setTimeout(function () {
-            // Select the welcome section
-            var welcomeSection = document.getElementById('welcome');
-            console.log('====================================');
-            console.log(window.scrollY);
-            console.log('====================================');
-            if (welcomeSection && window.scrollY < 150) {
-                // Calculate the position to scroll to, subtracting the offset (70px)
-                var offset = 85; // Offset in pixels
-                var elementPosition = welcomeSection.getBoundingClientRect().top + window.pageYOffset;
-                var offsetPosition = elementPosition - offset;
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Set a timeout for 30 seconds (30000 milliseconds)
+//         setTimeout(function () {
+//             // Select the welcome section
+//             var welcomeSection = document.getElementById('welcome');
+//             console.log('====================================');
+//             console.log(window.scrollY);
+//             console.log('====================================');
+//             if (welcomeSection && window.scrollY < 150) {
+//                 // Calculate the position to scroll to, subtracting the offset (70px)
+//                 var offset = 85; // Offset in pixels
+//                 var elementPosition = welcomeSection.getBoundingClientRect().top + window.pageYOffset;
+//                 var offsetPosition = elementPosition - offset;
 
-                // Scroll to the calculated position smoothly
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            } else {
-                console.warn('Element with id "welcome" not found.');
-            }
-        }, 32000); // 30000 milliseconds = 30 seconds
-});
+//                 // Scroll to the calculated position smoothly
+//                 window.scrollTo({
+//                     top: offsetPosition,
+//                     behavior: 'smooth'
+//                 });
+//             } else {
+//                 console.warn('Element with id "welcome" not found.');
+//             }
+//         }, 32000); // 30000 milliseconds = 30 seconds
+// });
 
 /*========================================================================================================================== */
 
@@ -153,7 +176,7 @@ function addShadowOnScroll() {
     if (scrollPosition > 0) {
         nav.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
         nav.style.backdropFilter = 'blur(15px)';
-        nav.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        nav.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
         nav.classList.add('scrolled');
         side_icon.style.display = 'flex'
         nav_items.forEach(items => {
@@ -409,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function () {
         validation.style.display = 'none';
         phone.style.border = '2px solid black';
     });
-    
+
 
     // Form submission event listener
     const form = document.getElementById('enquiryForm');
@@ -440,9 +463,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (node.nodeType === Node.TEXT_NODE) {
                 const text = node.textContent;
                 const wordsAndSpaces = text.split(/(\s+)/); // Split and keep the spaces
-                
+
                 const fragment = document.createDocumentFragment();
-                
+
                 wordsAndSpaces.forEach(part => {
                     if (/\s+/.test(part)) {
                         // If the part is whitespace, add it as a text node
@@ -455,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         fragment.appendChild(span);
                     }
                 });
-                
+
                 // Replace the original text node with the new fragment
                 node.parentNode.replaceChild(fragment, node);
             } else if (node.nodeType === Node.ELEMENT_NODE) {
@@ -463,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 Array.from(node.childNodes).forEach(child => processNode(child));
             }
         }
-        
+
         // Start processing from the root element
         Array.from(element.childNodes).forEach(child => processNode(child));
     }
@@ -478,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, index * 100); // Adjust the delay as needed
         });
     }
-    
+
     // Select the text elements
     const welcomeText = document.getElementById('welcome-text');
     const whyChooseText = document.getElementById('why-choose-text');
